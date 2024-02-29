@@ -1,0 +1,348 @@
+ContextInfoScreen As screen:
+
+    Rectangle1_16 As rectangle:
+        Fill: =RGBA(230, 230, 230, 1)
+        Height: =111
+        Width: =Parent.Width
+        ZIndex: =1
+
+    Label2_37 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Bold
+        Size: =18
+        Text: |-
+            ="Context Info
+            "
+        Width: =210
+        X: =124
+        Y: =23
+        ZIndex: =3
+
+    Icon1_13 As icon.BackArrow:
+        Color: =PRIMARYCOLOR
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(ScreenHome)
+        X: =35
+        Y: =23
+        ZIndex: =4
+
+    DataTable1 As dataTable.datatable:
+        BorderStyle: =BorderStyle.Solid
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.Lato
+        HeadingFont: =Font.Lato
+        Height: =134
+        Items: =TeamsContext
+        Width: =1217
+        X: =85
+        Y: =564
+        ZIndex: =5
+
+        channelId_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="channelId"
+            FieldName: ="channelId"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =1
+            Text: =ThisItem.channelId
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+        channelName_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="channelName"
+            FieldName: ="channelName"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =2
+            Text: =ThisItem.channelName
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =2
+
+        channelType_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="channelType"
+            FieldName: ="channelType"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =3
+            Text: =ThisItem.channelType
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =3
+
+        chatId_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="chatId"
+            FieldName: ="chatId"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =4
+            Text: =ThisItem.chatId
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =4
+
+        entityId_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="entityId"
+            FieldName: ="entityId"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =5
+            Text: =ThisItem.entityId
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =5
+
+        groupId_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="groupId"
+            FieldName: ="groupId"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =6
+            Text: =ThisItem.groupId
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =6
+
+        isFullScreen_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="isFullScreen"
+            FieldName: ="isFullScreen"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =7
+            Text: =ThisItem.isFullScreen
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =7
+
+        locale_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="locale"
+            FieldName: ="locale"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =8
+            Text: =ThisItem.locale
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =8
+
+        source_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="source"
+            FieldName: ="source"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =9
+            Text: =ThisItem.source
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =9
+
+        subEntityId_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="subEntityId"
+            FieldName: ="subEntityId"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =10
+            Text: =ThisItem.subEntityId
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =10
+
+        teamId_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="teamId"
+            FieldName: ="teamId"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =11
+            Text: =ThisItem.teamId
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =11
+
+        teamName_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="teamName"
+            FieldName: ="teamName"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =12
+            Text: =ThisItem.teamName
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =12
+
+        teamSiteUrl_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="teamSiteUrl"
+            FieldName: ="teamSiteUrl"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =13
+            Text: =ThisItem.teamSiteUrl
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =13
+
+        tenantSKU_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="tenantSKU"
+            FieldName: ="tenantSKU"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =14
+            Text: =ThisItem.tenantSKU
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =14
+
+        theme_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="theme"
+            FieldName: ="theme"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =15
+            Text: =ThisItem.theme
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =15
+
+        tid_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="tid"
+            FieldName: ="tid"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =16
+            Text: =ThisItem.tid
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =16
+
+        userLicenseType_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="userLicenseType"
+            FieldName: ="userLicenseType"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =17
+            Text: =ThisItem.userLicenseType
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =17
+
+    Label2_39 As label:
+        Font: =Font.Lato
+        Height: =43
+        Text: ="When loaded in Teams, context information is provided"
+        Width: =661
+        X: =85
+        Y: =525
+        ZIndex: =6
+
+    Label2_40 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: |-
+            ="Teams 
+            "
+        Width: =408
+        X: =85
+        Y: =499
+        ZIndex: =7
+
+    Label2_43 As label:
+        Font: =Font.Lato
+        Height: =43
+        Text: ="When running addiotional info is added beside those found in 'App'"  
+        Width: =661
+        X: =85
+        Y: =172
+        ZIndex: =9
+
+    Label2_44 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: |-
+            ="General
+            "
+        Width: =408
+        X: =85
+        Y: =146
+        ZIndex: =10
+
+    DataTable2 As dataTable.datatable:
+        BorderStyle: =BorderStyle.Solid
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.Lato
+        HeadingFont: =Font.Lato
+        Height: =157
+        Items: =PowerAppContext
+        Width: =814
+        X: =99
+        Y: =226
+        ZIndex: =11
+
+        tenantId_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="tenantId"
+            FieldName: ="tenantId"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =1
+            Text: =ThisItem.tenantId
+            Width: =100
+            X: =2
+            Y: =0
+            ZIndex: =18
+

@@ -1,0 +1,164 @@
+TabsPillScreen As screen:
+
+    Rectangle1_6 As rectangle:
+        Fill: =RGBA(230, 230, 230, 1)
+        Height: =111
+        Width: =Parent.Width
+        ZIndex: =1
+
+    Label1_12 As label:
+        Font: =Font.Lato
+        Height: =32
+        Text: ="Tabs organize and allow navigation between groups of related content."
+        Width: =1072
+        X: =124
+        Y: =55
+        ZIndex: =2
+
+    Label2_14 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Bold
+        Size: =18
+        Text: |-
+            ="Tabs
+            "
+        Width: =210
+        X: =124
+        Y: =23
+        ZIndex: =3
+
+    Icon1_4 As icon.BackArrow:
+        Color: =PRIMARYCOLOR
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(ScreenHome)
+        X: =35
+        Y: =23
+        ZIndex: =4
+
+    Label2_16 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: |-
+            ="Pill
+            "
+        Width: =210
+        X: =134
+        Y: =159
+        ZIndex: =6
+
+    ContainerPillTabs As groupContainer.horizontalAutoLayoutContainer:
+        Height: =50
+        LayoutMode: =LayoutMode.Auto
+        LayoutOverflowX: =LayoutOverflow.Scroll
+        X: =139
+        Y: =264
+        ZIndex: =12
+
+        TabsPillTab_1 As TabsPillTab:
+            IsDisabled: =false
+            IsSelected: =tabSelected=Self.TabID
+            LayoutMinHeight: =640
+            LayoutMinWidth: =640
+            OnTabSelected: |-
+                =UpdateContext({tabSelected:Self.TabID})
+            TabID: ="1"
+
+        TabsPillTab_2 As TabsPillTab:
+            IsDisabled: =false
+            IsSelected: =tabSelected=Self.TabID
+            LayoutMinHeight: =640
+            LayoutMinWidth: =640
+            OnTabSelected: |-
+                =UpdateContext({tabSelected:Self.TabID})
+            TabID: ="2"
+            ZIndex: =2
+
+        TabsPillTab_3 As TabsPillTab:
+            IsDisabled: =false
+            IsSelected: =tabSelected=Self.TabID
+            LayoutMinHeight: =640
+            LayoutMinWidth: =640
+            OnTabSelected: |-
+                =UpdateContext({tabSelected:Self.TabID})
+            TabID: ="3"
+            ZIndex: =3
+
+        TabsPillTab_4 As TabsPillTab:
+            IsSelected: =tabSelected=Self.TabID
+            LayoutMinHeight: =640
+            LayoutMinWidth: =640
+            OnTabSelected: |-
+                =UpdateContext({tabSelected:Self.TabID})
+            TabID: ="4"
+            ZIndex: =4
+
+    Label8 As label:
+        Font: =Font.Lato
+        Text: =tabSelected
+        X: =1085
+        Y: =274
+        ZIndex: =13
+
+    TabContainers As groupContainer.manualLayoutContainer:
+        X: =139
+        Y: =314
+        ZIndex: =14
+
+        TabContainer3 As groupContainer.manualLayoutContainer:
+            Fill: =ERRORCOLOR
+            Height: =Parent.Height
+            Visible: |-
+                =If(
+                    tabSelected = "3",
+                    true,
+                    false
+                )
+            Width: =Parent.Width
+            ZIndex: =1
+
+            Label5_2 As label:
+                Font: =Font.Lato
+                Text: ="Tab3"
+                X: =40
+                Y: =40
+                ZIndex: =1
+
+        TabContainer2 As groupContainer.manualLayoutContainer:
+            Fill: =WARNINGCOLOR
+            Height: =Parent.Height
+            Visible: |-
+                =If(
+                    tabSelected = "2",
+                    true,
+                    false
+                )
+            Width: =Parent.Width
+            ZIndex: =2
+
+            Label5_1 As label:
+                Font: =Font.Lato
+                Text: ="Tab2"
+                X: =40
+                Y: =40
+                ZIndex: =1
+
+        TabContainer1 As groupContainer.manualLayoutContainer:
+            Fill: =SUCCESSCOLOR
+            Height: =Parent.Height
+            Visible: |-
+                =If(
+                    tabSelected = "1",
+                    true,
+                    false
+                )
+            Width: =Parent.Width
+            ZIndex: =3
+
+            Label5 As label:
+                Font: =Font.Lato
+                Text: ="Tab1"
+                X: =40
+                Y: =40
+                ZIndex: =1
+

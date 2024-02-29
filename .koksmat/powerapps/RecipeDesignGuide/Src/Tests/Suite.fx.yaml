@@ -1,0 +1,12 @@
+"'7b04f902-7e47-416b-9e49-32defdf4baa3' As TestSuite":
+    Description: =""
+    DisplayName: ="Suite"
+
+    "'1ef0854d-74e9-4174-8e85-4982d35c4561' As TestCase":
+        Description: =""
+        DisplayName: ="Case"
+
+    "'0de839b5-d3fd-4af3-a083-ff789ddf476c' As TestCase":
+        Description: =""
+        DisplayName: ="Case (1)"
+

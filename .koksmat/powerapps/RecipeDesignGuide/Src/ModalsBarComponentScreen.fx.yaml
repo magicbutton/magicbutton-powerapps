@@ -1,0 +1,385 @@
+ModalsBarComponentScreen As screen:
+
+    Label3_4 As label:
+        Color: =RGBA(56, 96, 178, 1)
+        Font: =Font.Lato
+        Height: =61
+        OnSelect: =Launch(Self.Text)
+        Text: |-
+            ="https://docs.microsoft.com/en-us/powerapps/maker/canvas-apps/functions/function-showerror"
+        Visible: =false
+        Width: =905
+        X: =111
+        Y: =707
+        ZIndex: =1
+
+    Rectangle1_21 As rectangle:
+        Fill: =RGBA(230, 230, 230, 1)
+        Height: =111
+        Width: =Parent.Width
+        ZIndex: =2
+
+    Label1_43 As label:
+        Font: =Font.Lato
+        Height: =32
+        Text: ="Modals are used show notifications and additional information."
+        Width: =1072
+        X: =124
+        Y: =55
+        ZIndex: =3
+
+    Label2_53 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Bold
+        Height: =46
+        Size: =18
+        Text: ="Modal"
+        Width: =570
+        X: =124
+        Y: =23
+        ZIndex: =4
+
+    Icon1_18 As icon.BackArrow:
+        Color: =PRIMARYCOLOR
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(ScreenHome)
+        X: =35
+        Y: =23
+        ZIndex: =5
+
+    Label2_55 As label:
+        Font: =Font.Lato
+        Height: =46
+        Text: ="To reuse this, copy the relevant Modal Component"" to your own project. "
+        Width: =1095
+        X: =132
+        Y: =192
+        ZIndex: =6
+
+    Label2_54 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: |-
+            ="How to use
+            "
+        Width: =408
+        X: =129
+        Y: =152
+        ZIndex: =7
+
+    Image3_3 As image:
+        Height: =71
+        Image: =JUMPTO.logo
+        Width: =71
+        X: =Parent.Width- Self.Width-20
+        Y: =20
+        ZIndex: =8
+
+    ButtonPrimary_52 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        Height: =53
+        HoverBorderColor: |-
+            =ColorFade(ColorValue("#3E66FB"), 20%)
+        OnSelect: |-
+            =UpdateContext({modalLeftLargeVisible:true})
+        Text: ="Modal Multiple Actions"
+        Width: =278
+        X: =134
+        Y: =248
+        ZIndex: =9
+
+    ButtonPrimary_54 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        Height: =53
+        HoverBorderColor: |-
+            =ColorFade(ColorValue("#3E66FB"), 20%)
+        OnSelect: |-
+            =UpdateContext({modalCenterLargeVisible:true})
+        Text: ="Modal Single Action"
+        Width: =282
+        X: =580
+        Y: =248
+        ZIndex: =10
+
+    ModalLeftLargeComponent As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(255, 255, 255, 0.5)
+        Height: =Parent.Height
+        Visible: |
+            =modalLeftLargeVisible
+        Width: =Parent.Width
+        ZIndex: =11
+
+        CloseComponent As icon.Cancel:
+            Color: =RGBA(0,0,0,0)
+            Height: =Parent.Height
+            Icon: =Icon.Cancel
+            OnSelect: |-
+                =UpdateContext({modalLeftLargeVisible:false})
+            Width: =Parent.Width
+            ZIndex: =1
+
+        Elevation3Image_1 As image:
+            Height: =Min(500,App.DesignHeight)+16
+            Image: |-
+                ="data:image/svg+xml;utf8, "&EncodeUrl("<svg width='724' height='524' viewBox='0 0 724 524' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                <g filter='url(#filter0_d_2164_19554)'>
+                <rect x='4' y='2' width='716' height='516' rx='4' fill='white'/>
+                </g>
+                <defs>
+                <filter id='filter0_d_2164_19554' x='0' y='0' width='724' height='524' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'>
+                <feFlood flood-opacity='0' result='BackgroundImageFix'/>
+                <feColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/>
+                <feOffset dy='2'/>
+                <feGaussianBlur stdDeviation='2'/>
+                <feColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.24 0'/>
+                <feBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_2164_19554'/>
+                <feBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_2164_19554' result='shape'/>
+                </filter>
+                </defs>
+                </svg>
+                
+                ")
+            ImagePosition: =ImagePosition.Fill
+            Width: =Min(700,App.DesignWidth)+16
+            X: =((Parent.Width-Self.Width)/2)
+            Y: =((Parent.Height-Self.Height)/2)
+            ZIndex: =3
+
+        Container5 As groupContainer.manualLayoutContainer:
+            BorderColor: =RGBA(0, 0, 0, 0.1)
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =Min(500,App.DesignHeight)
+            Width: =Min(700,App.DesignWidth)
+            X: =(Parent.Width-Self.Width)/2
+            Y: =(Parent.Height-Self.Height)/2
+            ZIndex: =4
+
+            Container6 As groupContainer.verticalAutoLayoutContainer:
+                Height: =Parent.Height
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMode: =LayoutMode.Auto
+                Width: =Parent.Width
+                ZIndex: =1
+
+                Container7 As groupContainer.horizontalAutoLayoutContainer:
+                    FillPortions: =0
+                    Height: =60
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =1
+
+                    Icon5 As icon.Information:
+                        Icon: =Icon.Information
+                        PaddingBottom: =10
+                        PaddingLeft: =10
+                        PaddingRight: =10
+                        PaddingTop: =10
+                        ZIndex: =1
+
+                    Label1_44 As label:
+                        AlignInContainer: =AlignInContainer.Stretch
+                        FillPortions: =1
+                        Font: =Font.Lato
+                        FontWeight: =FontWeight.Bold
+                        Height: =83
+                        Size: =20
+                        Text: ="Modal Title"
+                        Width: =349
+                        X: =12
+                        ZIndex: =2
+
+                    Icon6 As icon.Cancel:
+                        Color: =RGBA(0,0,0,0.5)
+                        Icon: =Icon.Cancel
+                        OnSelect: |-
+                            =UpdateContext({modalLeftLargeVisible:false})
+                        PaddingBottom: =10
+                        PaddingLeft: =10
+                        PaddingRight: =10
+                        PaddingTop: =10
+                        ZIndex: =3
+
+                Label18 As label:
+                    AlignInContainer: =AlignInContainer.Stretch
+                    FillPortions: =1
+                    Font: =Font.Lato
+                    PaddingBottom: =20
+                    PaddingLeft: =20
+                    PaddingRight: =20
+                    PaddingTop: =20
+                    Text: ="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, sit scelerisque vestibulum magnis. Auctor dolor, tincidunt enim pharetra. Ornare amet suspendisse id sit malesuada. Nec platea tellus mollis diam ut elit consequat adipiscing at."
+                    ZIndex: =2
+
+                Container9 As groupContainer.horizontalAutoLayoutContainer:
+                    FillPortions: =0
+                    Height: =70
+                    LayoutGap: =10
+                    LayoutJustifyContent: =LayoutJustifyContent.End
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingBottom: =16
+                    PaddingLeft: =16
+                    PaddingRight: =16
+                    PaddingTop: =16
+                    ZIndex: =3
+
+                    ButtonPrimary_51 As button:
+                        BorderColor: |-
+                            =
+                            Self.Color
+                        Color: =RGBA(153, 153, 153, 1)
+                        Fill: =RGBA(255,255,255,0)
+                        Font: =Font.Lato
+                        HoverBorderColor: =RGBA(153, 153, 153, 1)
+                        HoverFill: =RGBA(153, 153, 153, 1)
+                        OnSelect: |-
+                            =UpdateContext({modalLeftLargeVisible:false})
+                        PressedColor: =WHITECOLOR
+                        Text: ="Secondary"
+                        X: =134
+                        Y: =404
+                        ZIndex: =1
+
+                    ButtonPrimary_49 As button:
+                        Fill: =PRIMARYCOLOR
+                        Font: =Font.Lato
+                        HoverBorderColor: |-
+                            =ColorFade(ColorValue("#3E66FB"), 20%)
+                        OnSelect: |-
+                            =UpdateContext({modalLeftLargeVisible:false})
+                        Text: ="Primary"
+                        X: =134
+                        Y: =248
+                        ZIndex: =2
+
+    ModalCenterLargeComponent As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(255, 255, 255, 0.5)
+        Height: =Parent.Height
+        Visible: |
+            =modalCenterLargeVisible
+        Width: =Parent.Width
+        ZIndex: =12
+
+        CloseComponent_1 As icon.Cancel:
+            Color: =RGBA(0,0,0,0)
+            Height: =Parent.Height
+            Icon: =Icon.Cancel
+            OnSelect: |-
+                =UpdateContext({modalCenterLargeVisible:false})
+            Width: =Parent.Width
+            ZIndex: =1
+
+        Shadow_1 As rectangle:
+            Fill: =RGBA(0,0,0,0.1  )
+            Height: =Min(400,App.DesignHeight)
+            Width: =Min(700,App.DesignWidth)
+            X: =((Parent.Width-Self.Width)/2)+8
+            Y: =((Parent.Height-Self.Height)/2)+8
+            ZIndex: =2
+
+        Container5_1 As groupContainer.manualLayoutContainer:
+            BorderColor: =RGBA(0, 0, 0, 0.1)
+            BorderThickness: =1
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =Min(400,App.DesignHeight)
+            Width: =Min(700,App.DesignWidth)
+            X: =(Parent.Width-Self.Width)/2
+            Y: =(Parent.Height-Self.Height)/2
+            ZIndex: =3
+
+            Container6_1 As groupContainer.verticalAutoLayoutContainer:
+                Height: =Parent.Height
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMode: =LayoutMode.Auto
+                Width: =Parent.Width
+                ZIndex: =1
+
+                Container7_1 As groupContainer.horizontalAutoLayoutContainer:
+                    FillPortions: =0
+                    Height: =60
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    ZIndex: =1
+
+                    Label19 As label:
+                        FillPortions: =1
+                        Font: =Font.Lato
+                        Text: =""
+                        ZIndex: =1
+
+                    Icon6_1 As icon.Cancel:
+                        Color: =RGBA(0,0,0,0.5)
+                        Icon: =Icon.Cancel
+                        OnSelect: |-
+                            =UpdateContext({modalCenterLargeVisible:false})
+                        PaddingBottom: =10
+                        PaddingLeft: =10
+                        PaddingRight: =10
+                        PaddingTop: =10
+                        ZIndex: =2
+
+                Icon5_1 As icon.Information:
+                    AlignInContainer: =AlignInContainer.Center
+                    Icon: =Icon.Information
+                    PaddingBottom: =10
+                    PaddingLeft: =10
+                    PaddingRight: =10
+                    PaddingTop: =10
+                    ZIndex: =2
+
+                Label1_45 As label:
+                    Align: =Align.Center
+                    AlignInContainer: =AlignInContainer.Center
+                    Font: =Font.Lato
+                    FontWeight: =FontWeight.Bold
+                    Height: =83
+                    Size: =20
+                    Text: ="Modal Title"
+                    Width: =349
+                    X: =12
+                    ZIndex: =3
+
+                Label18_1 As label:
+                    Align: =Align.Center
+                    AlignInContainer: =AlignInContainer.Stretch
+                    FillPortions: =1
+                    Font: =Font.Lato
+                    PaddingBottom: =20
+                    PaddingLeft: =20
+                    PaddingRight: =20
+                    PaddingTop: =20
+                    Text: ="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, sit scelerisque vestibulum magnis. Auctor dolor, tincidunt enim pharetra. Ornare amet suspendisse id sit malesuada. Nec platea tellus mollis diam ut elit consequat adipiscing at."
+                    ZIndex: =4
+
+                Container9_4 As groupContainer.horizontalAutoLayoutContainer:
+                    FillPortions: =0
+                    Height: =70
+                    LayoutGap: =10
+                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingBottom: =16
+                    PaddingLeft: =16
+                    PaddingRight: =16
+                    PaddingTop: =16
+                    ZIndex: =5
+
+                    ButtonPrimary_55 As button:
+                        Fill: =PRIMARYCOLOR
+                        Font: =Font.Lato
+                        HoverBorderColor: |-
+                            =ColorFade(ColorValue("#3E66FB"), 20%)
+                        OnSelect: |-
+                            =UpdateContext({modalCenterLargeVisible:false})
+                        Text: ="Primary"
+                        X: =134
+                        Y: =248
+                        ZIndex: =2
+

@@ -1,0 +1,388 @@
+ButtonsScreen As screen:
+
+    Label3_2 As label:
+        Color: =RGBA(56, 96, 178, 1)
+        Font: =Font.Lato
+        Height: =61
+        OnSelect: =Launch(Self.Text)
+        Text: |-
+            ="https://docs.microsoft.com/en-us/powerapps/maker/canvas-apps/functions/function-showerror"
+        Visible: =false
+        Width: =905
+        X: =111
+        Y: =707
+        ZIndex: =9
+
+    Rectangle1_5 As rectangle:
+        Fill: =RGBA(230, 230, 230, 1)
+        Height: =111
+        Width: =Parent.Width
+        ZIndex: =15
+
+    Label1_6 As label:
+        Font: =Font.Lato
+        Height: =32
+        Text: ="Buttons allow users to take actions and make choices."
+        Width: =1072
+        X: =124
+        Y: =55
+        ZIndex: =16
+
+    Label2_6 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Bold
+        Size: =18
+        Text: |-
+            ="Buttons
+            "
+        Width: =210
+        X: =124
+        Y: =23
+        ZIndex: =17
+
+    Icon1_3 As icon.BackArrow:
+        Color: =PRIMARYCOLOR
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(ScreenHome)
+        X: =35
+        Y: =23
+        ZIndex: =18
+
+    ButtonPrimary As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        HoverBorderColor: |-
+            =ColorFade(ColorValue("#3E66FB"), 20%)
+        Text: ="Button"
+        X: =134
+        Y: =248
+        ZIndex: =19
+
+    ButtonPrimaryDisabled As button:
+        DisplayMode: =DisplayMode.Disabled
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        Text: ="Button"
+        X: =329
+        Y: =248
+        ZIndex: =20
+
+    ButtonPrimary_1 As button:
+        Fill: =ERRORCOLOR
+        Font: =Font.Lato
+        HoverBorderColor: |-
+            =ColorFade(ColorValue("#3E66FB"), 20%)
+        Text: ="Button"
+        X: =134
+        Y: =685
+        ZIndex: =21
+
+    ButtonPrimaryDisabled_1 As button:
+        DisplayMode: =DisplayMode.Disabled
+        Fill: =ERRORCOLOR
+        Font: =Font.Lato
+        Text: ="Button"
+        X: =329
+        Y: =685
+        ZIndex: =22
+
+    Label1_7 As label:
+        Color: =LIGHTGREYCOLOR
+        Font: =Font.Lato
+        Height: =32
+        Text: ="Primary buttons have the most emphasis."
+        Width: =482
+        X: =134
+        Y: =199
+        ZIndex: =23
+
+    Label1_8 As label:
+        Color: =LIGHTGREYCOLOR
+        Font: =Font.Lato
+        Height: =34
+        Text: ="Danger buttons are used to warn users about a dangerious action (ie. “delete”)"
+        Width: =729
+        X: =134
+        Y: =637
+        ZIndex: =24
+
+    Label2_7 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: |-
+            ="Primary
+            "
+        Width: =210
+        X: =134
+        Y: =159
+        ZIndex: =25
+
+    Label2_8 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: |-
+            ="Danger
+            "
+        Width: =210
+        X: =134
+        Y: =597
+        ZIndex: =26
+
+    Container8 As groupContainer.horizontalAutoLayoutContainer:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        BorderThickness: =1
+        Height: =66
+        LayoutGap: =10
+        LayoutJustifyContent: =LayoutJustifyContent.End
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =10
+        PaddingLeft: =10
+        PaddingRight: =10
+        PaddingTop: =10
+        Width: =518
+        X: =781
+        Y: =288
+        ZIndex: =27
+
+        ButtonPrimary_2 As button:
+            Fill: =PRIMARYCOLOR
+            Font: =Font.Lato
+            HoverBorderColor: |-
+                =ColorFade(ColorValue("#3E66FB"), 20%)
+            Text: ="Button"
+            X: =134
+            Y: =248
+            ZIndex: =1
+
+    ButtonPrimary_4 As button:
+        BorderColor: |-
+            =
+            Self.Color
+        Color: =RGBA(153, 153, 153, 1)
+        Fill: =RGBA(255,255,255,0)
+        Font: =Font.Lato
+        HoverBorderColor: =RGBA(153, 153, 153, 1)
+        HoverFill: =RGBA(153, 153, 153, 1)
+        PressedColor: =WHITECOLOR
+        Text: ="Button"
+        X: =134
+        Y: =404
+        ZIndex: =28
+
+    Label2_9 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: |-
+            ="Secondary
+            "
+        Width: =210
+        X: =134
+        Y: =318
+        ZIndex: =30
+
+    Container8_1 As groupContainer.horizontalAutoLayoutContainer:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        BorderThickness: =1
+        Height: =66
+        LayoutGap: =10
+        LayoutJustifyContent: =LayoutJustifyContent.End
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =10
+        PaddingLeft: =10
+        PaddingRight: =10
+        PaddingTop: =10
+        Width: =518
+        X: =781
+        Y: =520
+        ZIndex: =31
+
+        ButtonPrimary_3 As button:
+            Fill: =PRIMARYCOLOR
+            Font: =Font.Lato
+            HoverBorderColor: |-
+                =ColorFade(ColorValue("#3E66FB"), 20%)
+            Text: ="Button"
+            X: =134
+            Y: =248
+            ZIndex: =1
+
+        Label1_1 As label:
+            FillPortions: =1
+            Font: =Font.Lato
+            Text: =""
+            ZIndex: =2
+
+        ButtonPrimary_5 As button:
+            Fill: =ERRORCOLOR
+            Font: =Font.Lato
+            HoverBorderColor: |-
+                =ColorFade(ColorValue("#3E66FB"), 20%)
+            Text: ="Button"
+            X: =134
+            Y: =685
+            ZIndex: =3
+
+    Label1_9 As label:
+        Color: =LIGHTGREYCOLOR
+        Font: =Font.Lato
+        Height: =50
+        Text: ="Buttons should be descriptive and be placed in order of importance."
+        Width: =547
+        X: =781
+        Y: =212
+        ZIndex: =32
+
+    Label2_10 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: |-
+            ="Examples
+            "
+        Width: =210
+        X: =781
+        Y: =159
+        ZIndex: =33
+
+    Label1_10 As label:
+        Color: =LIGHTGREYCOLOR
+        Font: =Font.Lato
+        Height: =32
+        Text: ="Secondary buttons have less emphasis. "
+        Width: =482
+        X: =134
+        Y: =361
+        ZIndex: =34
+
+    ButtonPrimary_7 As button:
+        BorderColor: |-
+            =
+            Self.Color
+        Color: =RGBA(179, 179, 179, 1)
+        DisplayMode: =DisplayMode.Disabled
+        Fill: =RGBA(255,255,255,0)
+        Font: =Font.Lato
+        Text: ="Button"
+        X: =329
+        Y: =404
+        ZIndex: =35
+
+    ButtonPrimary_8 As button:
+        BorderColor: |-
+            =
+            Self.Color
+        BorderThickness: =0
+        Color: =PRIMARYCOLOR
+        Fill: =RGBA(255,255,255,0)
+        Font: =Font.Lato
+        HoverBorderColor: =PRIMARYCOLOR
+        HoverColor: |-
+            =ColorFade(ColorValue("#3E66FB"), 20%)
+        HoverFill: =Self.Fill
+        PressedColor: =WHITECOLOR
+        Text: ="Button"
+        X: =134
+        Y: =546
+        ZIndex: =36
+
+    Label2_11 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: |-
+            ="Tertiary
+            "
+        Width: =210
+        X: =134
+        Y: =460
+        ZIndex: =37
+
+    Label1_11 As label:
+        Color: =LIGHTGREYCOLOR
+        Font: =Font.Lato
+        Height: =32
+        Text: ="Tertiary buttons have the least emphasis."
+        Width: =482
+        X: =134
+        Y: =503
+        ZIndex: =38
+
+    ButtonPrimary_9 As button:
+        BorderColor: |-
+            =
+            Self.Color
+        Color: =RGBA(179, 179, 179, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(244, 244, 244, 0)
+        DisplayMode: =DisplayMode.Disabled
+        Fill: =RGBA(0, 0, 0, 0)
+        Font: =Font.Lato
+        Text: ="Button"
+        X: =329
+        Y: =546
+        ZIndex: =39
+
+    Container8_2 As groupContainer.horizontalAutoLayoutContainer:
+        BorderColor: =RGBA(166, 166, 166, 1)
+        BorderThickness: =1
+        Height: =66
+        LayoutGap: =10
+        LayoutJustifyContent: =LayoutJustifyContent.End
+        LayoutMode: =LayoutMode.Auto
+        LayoutOverflowX: =LayoutOverflow.Scroll
+        LayoutOverflowY: =LayoutOverflow.Scroll
+        PaddingBottom: =10
+        PaddingLeft: =10
+        PaddingRight: =10
+        PaddingTop: =10
+        Width: =518
+        X: =781
+        Y: =409
+        ZIndex: =40
+
+        ButtonPrimary_11 As button:
+            BorderColor: |-
+                =
+                Self.Color
+            BorderThickness: =0
+            Color: =PRIMARYCOLOR
+            Fill: =RGBA(255,255,255,0)
+            Font: =Font.Lato
+            HoverBorderColor: =Self.Fill
+            HoverColor: |-
+                =ColorFade(ColorValue("#3E66FB"), 20%)
+            HoverFill: =Self.Fill
+            PressedColor: =WHITECOLOR
+            Text: ="Button"
+            X: =134
+            Y: =546
+            ZIndex: =1
+
+        ButtonPrimary_10 As button:
+            BorderColor: |-
+                =
+                Self.Color
+            Color: =RGBA(153, 153, 153, 1)
+            Fill: =RGBA(255,255,255,0)
+            Font: =Font.Lato
+            HoverBorderColor: =RGBA(153, 153, 153, 1)
+            HoverFill: =RGBA(153, 153, 153, 1)
+            PressedColor: =WHITECOLOR
+            Text: ="Button"
+            X: =134
+            Y: =404
+            ZIndex: =2
+
+        ButtonPrimary_6 As button:
+            Fill: =PRIMARYCOLOR
+            Font: =Font.Lato
+            HoverBorderColor: |-
+                =ColorFade(ColorValue("#3E66FB"), 20%)
+            Text: ="Button"
+            X: =134
+            Y: =248
+            ZIndex: =3
+

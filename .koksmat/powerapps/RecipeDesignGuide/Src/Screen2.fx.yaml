@@ -1,0 +1,49 @@
+Screen2 As screen:
+
+    PageSection_1 As groupContainer.horizontalAutoLayoutContainer:
+        Height: =Parent.Height-Self.Y
+        LayoutMode: =LayoutMode.Auto
+        LayoutOverflowX: =LayoutOverflow.Scroll
+        LayoutOverflowY: =LayoutOverflow.Scroll
+        PaddingBottom: =10
+        PaddingLeft: =10
+        PaddingRight: =10
+        PaddingTop: =10
+        Width: =Parent.Width
+        Y: =111
+        ZIndex: =1
+
+    Rectangle1_14 As rectangle:
+        Fill: =RGBA(230, 230, 230, 1)
+        Height: =111
+        Width: =Parent.Width
+        ZIndex: =2
+
+    Label1_20 As label:
+        Font: =Font.Lato
+        Height: =32
+        Text: ="Page Description"
+        Width: =1072
+        X: =124
+        Y: =55
+        ZIndex: =3
+
+    Label2_31 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Bold
+        Size: =18
+        Text: |-
+            ="Page Name
+            "
+        Width: =210
+        X: =124
+        Y: =23
+        ZIndex: =4
+
+    Icon1_11 As icon.BackArrow:
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(ScreenHome)
+        X: =35
+        Y: =23
+        ZIndex: =5
+

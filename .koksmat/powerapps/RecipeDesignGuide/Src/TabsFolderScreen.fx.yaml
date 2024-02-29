@@ -1,0 +1,201 @@
+TabsFolderScreen As screen:
+
+    Rectangle1_7 As rectangle:
+        Fill: =RGBA(230, 230, 230, 1)
+        Height: =111
+        Width: =Parent.Width
+        ZIndex: =1
+
+    Label1_15 As label:
+        Font: =Font.Lato
+        Height: =32
+        Text: ="Tabs organize and allow navigation between groups of related content."
+        Width: =1072
+        X: =124
+        Y: =55
+        ZIndex: =2
+
+    Label2_15 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Bold
+        Size: =18
+        Text: |-
+            ="Tabs
+            "
+        Width: =210
+        X: =124
+        Y: =23
+        ZIndex: =3
+
+    Icon1_5 As icon.BackArrow:
+        Color: =PRIMARYCOLOR
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(ScreenHome)
+        X: =35
+        Y: =23
+        ZIndex: =4
+
+    Label2_17 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: |-
+            ="Folder
+            "
+        Width: =210
+        X: =134
+        Y: =159
+        ZIndex: =6
+
+    Container10_1 As groupContainer.horizontalAutoLayoutContainer:
+        Height: =50
+        LayoutMode: =LayoutMode.Auto
+        Width: =630
+        X: =139
+        Y: =255
+        ZIndex: =8
+
+        TabsFolderTab_4 As TabsFolderTab:
+            AccentColor: |
+                =ACCENT1COLOR
+            IsDisabled: =false
+            IsSelected: =If(tabSelected=Self.TabID,true,false)
+            LayoutMinHeight: =640
+            LayoutMinWidth: =640
+            LightGrey: =LIGHTGREYCOLOR
+            OnTabSelected: |-
+                =UpdateContext({tabSelected:Self.TabID})
+            PrimaryColor: |+
+                =PRIMARYCOLOR
+                
+            TabID: ="1"
+            Width: =165
+            X: =154
+            Y: =507
+
+        TabsFolderTab_6 As TabsFolderTab:
+            AccentColor: |
+                =ACCENT1COLOR
+            IsDisabled: =false
+            IsSelected: =If(tabSelected=Self.TabID,true,false)
+            LayoutMinHeight: =640
+            LayoutMinWidth: =640
+            LightGrey: =LIGHTGREYCOLOR
+            OnTabSelected: |-
+                =UpdateContext({tabSelected:Self.TabID})
+            PrimaryColor: |+
+                =PRIMARYCOLOR
+                
+            TabID: ="2"
+            Width: =165
+            X: =154
+            Y: =507
+            ZIndex: =2
+
+        TabsFolderTab_8 As TabsFolderTab:
+            AccentColor: |
+                =ACCENT1COLOR
+            IsDisabled: =false
+            IsSelected: =If(tabSelected=Self.TabID,true,false)
+            LayoutMinHeight: =640
+            LayoutMinWidth: =640
+            LightGrey: =LIGHTGREYCOLOR
+            OnTabSelected: |-
+                =UpdateContext({tabSelected:Self.TabID})
+            PrimaryColor: |+
+                =PRIMARYCOLOR
+                
+            TabID: ="3"
+            Width: =165
+            X: =154
+            Y: =507
+            ZIndex: =3
+
+        TabsFolderTab_9 As TabsFolderTab:
+            AccentColor: |
+                =ACCENT1COLOR
+            IsSelected: =If(tabSelected=Self.TabID,true,false)
+            LayoutMinHeight: =640
+            LayoutMinWidth: =640
+            LightGrey: =LIGHTGREYCOLOR
+            OnTabSelected: |-
+                =UpdateContext({tabSelected:Self.TabID})
+            PrimaryColor: |+
+                =PRIMARYCOLOR
+                
+            TabID: ="4"
+            Width: =165
+            X: =154
+            Y: =507
+            ZIndex: =4
+
+    Label8_1 As label:
+        Font: =Font.Lato
+        Text: =tabSelected
+        X: =1085
+        Y: =274
+        ZIndex: =13
+
+    TabContainers_1 As groupContainer.manualLayoutContainer:
+        Width: =630
+        X: =139
+        Y: =294
+        ZIndex: =14
+
+        TabContainer3_1 As groupContainer.manualLayoutContainer:
+            Fill: =ERRORCOLOR
+            Height: =Parent.Height
+            Visible: |-
+                =If(
+                    tabSelected = "3",
+                    true,
+                    false
+                )
+            Width: =Parent.Width
+            ZIndex: =1
+
+            Label5_3 As label:
+                Font: =Font.Lato
+                Text: ="Tab3"
+                X: =40
+                Y: =40
+                ZIndex: =1
+
+        TabContainer2_1 As groupContainer.manualLayoutContainer:
+            Fill: =WARNINGCOLOR
+            Height: =Parent.Height
+            Visible: |-
+                =If(
+                    tabSelected = "2",
+                    true,
+                    false
+                )
+            Width: =Parent.Width
+            ZIndex: =2
+
+            Label5_4 As label:
+                Font: =Font.Lato
+                Text: ="Tab2"
+                X: =40
+                Y: =40
+                ZIndex: =1
+
+        TabContainer1_1 As groupContainer.manualLayoutContainer:
+            Fill: =SUCCESSCOLOR
+            Height: =Parent.Height
+            Visible: |-
+                =If(
+                    tabSelected = "1",
+                    true,
+                    false
+                )
+            Width: =Parent.Width
+            ZIndex: =3
+
+            Label5_5 As label:
+                Font: =Font.Lato
+                Text: ="Tab1"
+                X: =40
+                Y: =40
+                ZIndex: =1
+

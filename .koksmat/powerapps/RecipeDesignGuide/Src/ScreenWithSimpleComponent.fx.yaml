@@ -1,0 +1,16 @@
+ScreenWithSimpleComponent As screen:
+
+    Container4 As groupContainer.manualLayoutContainer:
+        X: =40
+        Y: =40
+        ZIndex: =1
+
+    Button8 As button:
+        Font: =Font.Lato
+        OnSelect: |-
+            =UpdateContext({componentVisible:!componentVisible})
+        Text: ="Button"
+        X: =696
+        Y: =74
+        ZIndex: =2
+

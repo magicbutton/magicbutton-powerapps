@@ -1,0 +1,604 @@
+ShopScreen As screen:
+    OnVisible: |-
+        =ClearCollect(PriceLists,{ID:1,'Item Groups' : ForAll([{Id:1}], {Value: ThisRecord})});
+        ClearCollect(ItemGroups,{ID:1,Title:"Group 1"});
+        ClearCollect(Items,{Title:"Item 1",Price:1,'Local price':1,Group:{Id:1}},{Title:"Item 2",Group:{Id:1}});
+        Collect(CurrentOrder,{});
+        Clear(CurrentOrder);
+        UpdateContext({priceListId:1,tabSelected:"1", showPricelist:If(CountRows(CurrentOrder)<1 , true,App.Width>600)});
+        Clear(HourMinutes);
+        ForAll(Sequence(24), Collect(HourMinutes,{Text:Text(Value-1,"00")&":00" ,Seconds:(Value-1)*60+0});
+        Collect(HourMinutes,{Text:Text(Value-1,"00")&":15" ,Seconds:Value*(Value-1)+15});
+         Collect(HourMinutes,{Text:Text(Value-1,"00")&":30" ,Seconds:Value*(Value-1)+30});
+         Collect(HourMinutes,{Text:Text(Value-1,"00")&":45" ,Seconds:Value*(Value-1)+45}));
+        
+        Clear(PriceListGroups);
+        UpdateContext({priceListId: 1});
+        UpdateContext(
+            {
+                priceList: LookUp(
+                    PriceLists,
+                    ID = priceListId
+                )
+            }
+        );
+        ForAll(
+            Filter(
+                ItemGroups,
+                true  //  ID in priceList.'Item Groups'.Id
+            ),
+            Collect(PriceListGroups,ThisRecord)
+        )
+
+    ContainerOrderBottom As groupContainer.horizontalAutoLayoutContainer:
+        Fill: =PRIMARYCOLOR
+        Height: =81
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutJustifyContent: =LayoutJustifyContent.Center
+        LayoutMode: =LayoutMode.Auto
+        LayoutOverflowX: =LayoutOverflow.Scroll
+        Width: =Parent.Width
+        Y: =Parent.Height-Self.Height
+        ZIndex: =1
+
+        Label9_8 As label:
+            FillPortions: =1
+            Font: =Font.Lato
+            LayoutMinWidth: =0
+            Text: =""
+            X: =40
+            Y: =40
+            ZIndex: =2
+
+        Label9_9 As label:
+            Align: =Align.Right
+            Color: =RGBA(255, 255, 255, 1)
+            FillPortions: =1
+            Font: =Font.Lato
+            LayoutMinWidth: =0
+            PaddingRight: =25
+            Size: =25
+            Text: |-
+                ="In total €" & Text(Sum(CurrentOrder, quantity*item.Price),"#,###.00")
+            X: =40
+            Y: =40
+            ZIndex: =5
+
+    ContainerOrderItems As groupContainer.horizontalAutoLayoutContainer:
+        Height: =Parent.Height-Self.Y-ContainerOrderBottom.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutMode: =LayoutMode.Auto
+        LayoutOverflowX: =LayoutOverflow.Scroll
+        LayoutOverflowY: =LayoutOverflow.Scroll
+        PaddingLeft: =10
+        PaddingRight: =10
+        Visible: =tabSelected="1"
+        Width: =Parent.Width
+        Y: =ContainerOrderTop.Height
+        ZIndex: =2
+
+        Icon7 As icon.Hamburger:
+            AlignInContainer: =AlignInContainer.Start
+            Height: =48
+            Icon: =Icon.Hamburger
+            OnSelect: |-
+                =UpdateContext({showPricelist:!showPricelist})
+            PaddingTop: =10
+            ZIndex: =1
+
+        ContainerPriceList As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =10
+            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+            LayoutMinHeight: =100
+            LayoutMinWidth: =500
+            LayoutMode: =LayoutMode.Auto
+            PaddingRight: =10
+            PaddingTop: =10
+            Visible: =showPricelist
+            ZIndex: =2
+
+            ComboBox2 As combobox:
+                DisplayFields: =["Title"]
+                Font: =Font.Lato
+                InputTextPlaceholder: ="Select on or more groups from the pricelist"
+                IsSearchable: =false
+                Items: =PriceListGroups
+                SearchFields: =["Title"]
+                SearchItems: =[]
+                ZIndex: =1
+
+            "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                Items: =Items //Sort(Filter(Items,Group.Id in ComboBox2.SelectedItems.ID),Title)
+                Layout: =Layout.Vertical
+                LayoutMinHeight: =287
+                LayoutMinWidth: =320
+                OnSelect: |-
+                    =Collect(CurrentOrder,{quantity:1,when:0,item:ThisItem,seconds:360})
+                TemplatePadding: =0
+                TemplateSize: =80
+                Width: =Parent.Width
+                ZIndex: =2
+
+                Title3 As label:
+                    Font: =Font.Lato
+                    Height: =Self.Size * 1.8
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =18
+                    Text: =ThisItem.Title
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =Parent.TemplateWidth - 104
+                    X: =1
+                    Y: =16
+                    ZIndex: =1
+
+                Subtitle3 As label:
+                    Font: =Font.Lato
+                    Height: =Self.Size * 1.8
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: |-
+                        ="€" & Text(ThisItem.Price,"#,###.00") & " (Local price " & Text(ThisItem.'Local price',"#,###.00")  & ")"
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =Parent.TemplateWidth - 104
+                    X: =1
+                    Y: =Title3.Y + Title3.Height + 4
+                    ZIndex: =2
+
+                NextArrow3 As icon.ChevronRight:
+                    AccessibleLabel: =Self.Tooltip
+                    Height: =60
+                    Icon: =Icon.Add
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =10
+                    PaddingLeft: =10
+                    PaddingRight: =10
+                    PaddingTop: =10
+                    TabIndex: =0
+                    Tooltip: ="View item details"
+                    Width: =60
+                    X: =Parent.TemplateWidth-Self.Width
+                    Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                    ZIndex: =3
+
+                Separator3 As rectangle:
+                    Height: =1
+                    OnSelect: =Select(Parent)
+                    Width: =Parent.TemplateWidth
+                    Y: =Parent.TemplateHeight - 1
+                    ZIndex: =4
+
+        Rectangle4 As rectangle:
+            Width: =1
+            ZIndex: =3
+
+        Label12 As label:
+            Font: =Font.Lato
+            Text: =""
+            Width: =20
+            ZIndex: =4
+
+        ContainerOrder As groupContainer.verticalAutoLayoutContainer:
+            AlignInContainer: =AlignInContainer.SetByContainer
+            FillPortions: =2
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingTop: =10
+            ZIndex: =5
+
+            "Gallery2 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                Items: =Sort(CurrentOrder,seconds)
+                Layout: =Layout.Vertical
+                LayoutMinHeight: =287
+                LayoutMinWidth: =320
+                TemplatePadding: =0
+                TemplateSize: =60
+                Width: =Parent.Width
+                ZIndex: =1
+
+                Separator6 As rectangle:
+                    Height: =1
+                    OnSelect: =Select(Parent)
+                    Width: =Parent.TemplateWidth
+                    Y: =Parent.TemplateHeight - 1
+                    ZIndex: =4
+
+                Container2_1 As groupContainer.verticalAutoLayoutContainer:
+                    Height: =Parent.TemplateHeight
+                    LayoutAlignItems: =LayoutAlignItems.Stretch
+                    LayoutMode: =LayoutMode.Auto
+                    Width: =Parent.TemplateWidth
+                    ZIndex: =5
+
+                    Container2_3 As groupContainer.verticalAutoLayoutContainer:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        Height: =104
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutMinHeight: =80
+                        LayoutMinWidth: =250
+                        LayoutMode: =LayoutMode.Auto
+                        Width: =50
+                        ZIndex: =2
+
+                        Container2_4 As groupContainer.verticalAutoLayoutContainer:
+                            AlignInContainer: =AlignInContainer.SetByContainer
+                            FillPortions: =0
+                            Height: =Gallery2.TemplateHeight
+                            LayoutMinHeight: =100
+                            LayoutMinWidth: =250
+                            LayoutMode: =LayoutMode.Auto
+                            PaddingRight: =10
+                            Width: =50
+                            ZIndex: =4
+
+                            Dropdown1 As dropdown:
+                                AlignInContainer: =AlignInContainer.Center
+                                Default: =LookUp(HourMinutes,Seconds = ThisItem.seconds).Text
+                                Font: =Font.Lato
+                                Items: =HourMinutes
+                                OnChange: |-
+                                    =Patch(CurrentOrder,ThisItem,{seconds:Self.Selected.Seconds})
+                                Width: =90
+                                ZIndex: =1
+
+                            Title6 As label:
+                                AlignInContainer: =AlignInContainer.Center
+                                FillPortions: =1
+                                Font: =Font.Lato
+                                LayoutMinHeight: =20
+                                OnSelect: =//Select(Parent)
+                                PaddingBottom: =0
+                                PaddingLeft: =10
+                                PaddingRight: =0
+                                PaddingTop: =0
+                                Size: =16
+                                Text: =ThisItem.item.Title
+                                VerticalAlign: =VerticalAlign.Top
+                                Width: =//Parent.TemplateWidth - 104
+                                X: =32
+                                Y: =16
+                                ZIndex: =2
+
+                            TextInput1 As text:
+                                Align: =Align.Right
+                                AlignInContainer: =AlignInContainer.Center
+                                Default: =ThisItem.quantity
+                                Font: =Font.Lato
+                                Format: =TextFormat.Number
+                                HintText: ="Enter Quantity"
+                                LayoutMinWidth: =100
+                                OnChange: |-
+                                    =Patch(CurrentOrder,ThisItem,{quantity:Value(Self.Text)})
+                                Width: =50
+                                ZIndex: =4
+
+                            Label4 As label:
+                                Align: =Align.Right
+                                AlignInContainer: =AlignInContainer.Center
+                                Font: =Font.Lato
+                                LayoutMinWidth: =50
+                                Size: =15
+                                Text: |-
+                                    ="€" & Text(ThisItem.item.Price,"#.00")
+                                Width: =100
+                                ZIndex: =5
+
+                            Label10 As label:
+                                Align: =Align.Right
+                                AlignInContainer: =AlignInContainer.Center
+                                Font: =Font.Lato
+                                Size: =15
+                                Text: |-
+                                    ="€" & Text(Value(ThisItem.quantity) * ThisItem.item.Price,"#,###.00")
+                                Width: =110
+                                ZIndex: =6
+
+                            NextArrow6 As icon.ChevronRight:
+                                AccessibleLabel: =Self.Tooltip
+                                AlignInContainer: =AlignInContainer.Center
+                                Height: =48
+                                Icon: =Icon.Trash
+                                OnSelect: |-
+                                    =Remove(CurrentOrder, ThisItem);
+                                    If(CountRows(CurrentOrder)<1,UpdateContext({showPricelist:true}))
+                                PaddingBottom: =6
+                                PaddingTop: =6
+                                TabIndex: =0
+                                Tooltip: ="View item details"
+                                X: =//Parent.TemplateWidth - Self.Width - 5
+                                Y: =//(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                                ZIndex: =7
+
+    ContainerDelivery As groupContainer.horizontalAutoLayoutContainer:
+        Fill: =RGBA(0,0,0,0)
+        Height: =Parent.Height - Self.Y-ContainerOrderBottom.Height
+        LayoutGap: =10
+        LayoutMode: =LayoutMode.Auto
+        Visible: =tabSelected="2"
+        Width: =Parent.Width
+        Y: =ContainerOrderTop.Height
+        ZIndex: =3
+
+        Label1_27 As label:
+            Font: =Font.Lato
+            Text: =""
+            Width: =30
+            X: =80
+            Y: =80
+            ZIndex: =1
+
+        Container3 As groupContainer.verticalAutoLayoutContainer:
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            ZIndex: =2
+
+            Label1_33 As label:
+                Font: =Font.Lato
+                Text: ="Provider"
+                Width: =120
+                X: =80
+                Y: =80
+                ZIndex: =1
+
+            ComboBox1_1 As combobox:
+                DisplayFields: =["Title"]
+                Font: =Font.Lato
+                IsSearchable: =false
+                Items: =[]
+                SearchFields: =["Title"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                ZIndex: =2
+
+            Label1_32 As label:
+                Font: =Font.Lato
+                Text: ="Deliver to"
+                Width: =120
+                X: =80
+                Y: =80
+                ZIndex: =3
+
+            ComboBox1 As combobox:
+                DisplayFields: =["Title"]
+                Font: =Font.Lato
+                IsSearchable: =false
+                SearchFields: =["Title"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                ZIndex: =4
+
+            Label1_29 As label:
+                Font: =Font.Lato
+                Text: ="Delivery Day"
+                Width: =120
+                X: =80
+                Y: =80
+                ZIndex: =5
+
+            DatePicker1 As datepicker:
+                Font: =Font.Lato
+                ZIndex: =6
+
+            Label1_31 As label:
+                Font: =Font.Lato
+                Text: ="Payee"
+                Visible: =false
+                Width: =120
+                X: =80
+                Y: =80
+                ZIndex: =7
+
+            TextInput2 As text:
+                Default: ="Text input"
+                Font: =Font.Lato
+                Visible: =false
+                ZIndex: =8
+
+            Label1_34 As label:
+                Font: =Font.Lato
+                Text: ="Delivery Hour"
+                Width: =120
+                X: =80
+                Y: =80
+                ZIndex: =9
+
+            ComboBox1_2 As combobox:
+                DisplayFields: =["Text"]
+                Font: =Font.Lato
+                IsSearchable: =false
+                Items: =HourMinutes
+                SearchFields: =["Text"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                ZIndex: =10
+
+        Label1_30 As label:
+            Font: =Font.Lato
+            Text: =""
+            Width: =30
+            X: =80
+            Y: =80
+            ZIndex: =3
+
+    ContainerOrderTop As groupContainer.horizontalAutoLayoutContainer:
+        Fill: =ColorFade(LIGHTGREYCOLOR,0.9)
+        Height: =110
+        LayoutAlignItems: =LayoutAlignItems.Center
+        LayoutGap: =10
+        LayoutMode: =LayoutMode.Auto
+        PaddingBottom: =20
+        Width: =Parent.Width
+        ZIndex: =4
+
+        Label1_23 As label:
+            Font: =Font.Lato
+            Text: =""
+            Width: =30
+            X: =80
+            Y: =80
+            ZIndex: =1
+
+        Label2_42 As label:
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            PaddingLeft: =25
+            Size: =18
+            Text: ="Catering Order " 
+            Visible: =false
+            Width: =435
+            X: =125
+            Y: =40
+            ZIndex: =2
+
+        Label1_25 As label:
+            FillPortions: =1
+            Font: =Font.Lato
+            Text: =""
+            Width: =30
+            X: =80
+            Y: =80
+            ZIndex: =3
+
+        ButtonPrimary_48 As button:
+            BorderColor: |-
+                =
+                Self.Color
+            BorderThickness: =0
+            Color: =PRIMARYCOLOR
+            Fill: =RGBA(255,255,255,0)
+            Font: =Font.Lato
+            HoverBorderColor: =ACCENT1COLOR
+            HoverFill: =ACCENT1COLOR
+            OnSelect: |-
+                =UpdateContext({showDelivery:!showDelivery})
+            PressedColor: =WHITECOLOR
+            Text: ="Delivery "
+            Visible: =false
+            X: =134
+            Y: =546
+            ZIndex: =4
+
+        ButtonPrimary_53 As button:
+            BorderColor: |-
+                =
+                Self.Color
+            Color: =RGBA(153, 153, 153, 1)
+            Fill: =RGBA(255,255,255,0)
+            Font: =Font.Lato
+            HoverBorderColor: |-
+                =ColorFade(ColorValue("#3E66FB"), 20%)
+            OnSelect: =Navigate(ScreenHome,ScreenTransition.Fade)
+            PressedColor: =WHITECOLOR
+            Text: ="Cancel"
+            X: =134
+            Y: =404
+            ZIndex: =5
+
+        ButtonPrimary_50 As button:
+            Fill: =PRIMARYCOLOR
+            Font: =Font.Lato
+            HoverBorderColor: |-
+                =ColorFade(ColorValue("#3E66FB"), 20%)
+            OnSelect: =//Navigate(ScreenOrderForm,ScreenTransition.Cover)
+            Text: ="Send Order"
+            X: =134
+            Y: =248
+            ZIndex: =6
+
+        Label1_26 As label:
+            Font: =Font.Lato
+            Text: =""
+            Width: =30
+            X: =80
+            Y: =80
+            ZIndex: =7
+
+    ContainerOrderTabs As groupContainer.horizontalAutoLayoutContainer:
+        Height: =50
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        Y: =60
+        ZIndex: =5
+
+        TabsUnderscore_1 As TabsUnderscore:
+            IsDisabled: =false
+            IsSelected: =tabSelected=Self.TabID
+            LayoutMinHeight: =640
+            LayoutMinWidth: =640
+            OnTabSelected: |-
+                =UpdateContext({tabSelected:Self.TabID})
+            TabID: ="0"
+            Text: ="Tab 1"
+
+        TabsUnderscore_2 As TabsUnderscore:
+            IsDisabled: =false
+            IsSelected: =tabSelected=Self.TabID
+            LayoutMinHeight: =640
+            LayoutMinWidth: =640
+            OnTabSelected: |-
+                =UpdateContext({tabSelected:Self.TabID})
+            TabID: ="1"
+            Text: ="Tab 2"
+            ZIndex: =2
+
+        TabsUnderscore_3 As TabsUnderscore:
+            IsDisabled: =false
+            IsSelected: =tabSelected=Self.TabID
+            LayoutMinHeight: =640
+            LayoutMinWidth: =640
+            OnTabSelected: |-
+                =UpdateContext({tabSelected:Self.TabID})
+            TabID: ="2"
+            Text: ="Tab 3"
+            ZIndex: =3
+
+        TabsUnderscore_4 As TabsUnderscore:
+            IsDisabled: =false
+            IsSelected: =tabSelected=Self.TabID
+            LayoutMinHeight: =640
+            LayoutMinWidth: =640
+            OnTabSelected: |-
+                =UpdateContext({tabSelected:Self.TabID})
+            TabID: ="3"
+            Text: ="Tab 4"
+            ZIndex: =4
+
+        Label14_1 As label:
+            FillPortions: =1
+            Font: =Font.Lato
+            LayoutMinWidth: =0
+            Text: =""
+            Width: =100
+            ZIndex: =5
+
+        Label14 As label:
+            FillPortions: =3
+            Font: =Font.Lato
+            LayoutMinWidth: =0
+            Text: =""
+            ZIndex: =7
+
+    Rectangle2 As rectangle:
+        Fill: =ColorFade(PRIMARYCOLOR,0.5)
+        Height: =1
+        Width: =Parent.Width
+        Y: =110
+        ZIndex: =6
+

@@ -1,0 +1,16 @@
+DeveloperScreen As screen:
+
+    Button3 As button:
+        Font: =Font.Lato
+        OnSelect: |-
+            =Set(
+                I365Context,
+                {
+                    folder: "Alert Bar"
+                }
+            )
+        Text: ="Button"
+        X: =508
+        Y: =35
+        ZIndex: =1
+

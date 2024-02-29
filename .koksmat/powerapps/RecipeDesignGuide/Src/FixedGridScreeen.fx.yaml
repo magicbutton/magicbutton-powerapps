@@ -1,0 +1,404 @@
+FixedGridScreeen As screen:
+    OnVisible: |-
+        =UpdateContext({screenSize:JUMPTO.breakPoints.large})
+
+    Rectangle1_12 As rectangle:
+        Fill: =RGBA(230, 230, 230, 1)
+        Height: =111
+        Width: =1366
+        ZIndex: =1
+
+    Label1_22 As label:
+        Font: =Font.Lato
+        Height: =32
+        Text: =""
+        Width: =1072
+        X: =124
+        Y: =55
+        ZIndex: =2
+
+    Label2_28 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Bold
+        Size: =18
+        Text: |-
+            ="Fixed Grid
+            "
+        Width: =210
+        X: =124
+        Y: =23
+        ZIndex: =3
+
+    Icon1_12 As icon.BackArrow:
+        Color: =PRIMARYCOLOR
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(ScreenHome)
+        X: =35
+        Y: =23
+        ZIndex: =4
+
+    Label2_33 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: |-
+            ="Fixed Grid
+            "
+        Width: =210
+        X: =129
+        Y: =111
+        ZIndex: =5
+
+    ButtonPrimary_42 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        HoverBorderColor: |-
+            =ColorFade(ColorValue("#3E66FB"), 20%)
+        OnSelect: |-
+            =UpdateContext({screenSize:JUMPTO.breakPoints.small})
+        Text: ="Small"
+        X: =136
+        Y: =310
+        ZIndex: =6
+
+    ButtonPrimary_43 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        HoverBorderColor: |-
+            =ColorFade(ColorValue("#3E66FB"), 20%)
+        OnSelect: |-
+            =UpdateContext({screenSize:JUMPTO.breakPoints.medium})
+        Text: ="Medium"
+        X: =136
+        Y: =368
+        ZIndex: =7
+
+    ButtonPrimary_44 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        HoverBorderColor: |-
+            =ColorFade(ColorValue("#3E66FB"), 20%)
+        OnSelect: |-
+            =UpdateContext({screenSize:JUMPTO.breakPoints.large})
+        Text: ="Large"
+        X: =136
+        Y: =423
+        ZIndex: =8
+
+    ButtonPrimary_45 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        HoverBorderColor: |-
+            =ColorFade(ColorValue("#3E66FB"), 20%)
+        OnSelect: |-
+            =UpdateContext({screenSize:JUMPTO.breakPoints.xlarge})
+        Text: ="X-Large"
+        X: =136
+        Y: =478
+        ZIndex: =9
+
+    ButtonPrimary_46 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        HoverBorderColor: |-
+            =ColorFade(ColorValue("#3E66FB"), 20%)
+        OnSelect: |-
+            =UpdateContext({screenSize:JUMPTO.breakPoints.xxlarge})
+        Text: ="XX-Large"
+        X: =136
+        Y: =533
+        ZIndex: =10
+
+    ButtonPrimary_47 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        HoverBorderColor: |-
+            =ColorFade(ColorValue("#3E66FB"), 20%)
+        OnSelect: |-
+            =UpdateContext({screenSize:JUMPTO.breakPoints.xxxlarge})
+        Text: ="XXX-Large"
+        X: =136
+        Y: =595
+        ZIndex: =11
+
+    ButtonPrimary_41 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        HoverBorderColor: |-
+            =ColorFade(ColorValue("#3E66FB"), 20%)
+        OnSelect: |-
+            =UpdateContext({screenSize:JUMPTO.breakPoints.xsmall})
+        Text: ="X-Small"
+        X: =136
+        Y: =255
+        ZIndex: =12
+
+    ButtonPrimary_40 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        HoverBorderColor: |-
+            =ColorFade(ColorValue("#3E66FB"), 20%)
+        OnSelect: |-
+            =UpdateContext({screenSize:JUMPTO.breakPoints.xxsmall})
+        Text: ="XX-Small"
+        X: =136
+        Y: =199
+        ZIndex: =13
+
+    Label2_34 As label:
+        Font: =Font.Lato
+        Height: =43
+        Text: ="The Fixed Grid is depending on the context variable screenSize. "
+        Width: =661
+        X: =129
+        Y: =138
+        ZIndex: =14
+
+    Label2_35 As label:
+        Font: =Font.Lato
+        Height: =43
+        Text: ="Add the following snippet to the Onvisible property of the screen"
+        Width: =661
+        X: =129
+        Y: =654
+        ZIndex: =15
+
+    HtmlText1_1 As htmlViewer:
+        Color: =RGBA(255, 255, 255, 1)
+        Fill: =RGBA(0, 0, 0, 1)
+        Height: =58
+        HtmlText: |-
+            ="UpdateContext({screenSize:Self.Width})"
+        PaddingBottom: =15
+        PaddingLeft: =15
+        PaddingRight: =15
+        PaddingTop: =15
+        Width: =713
+        X: =129
+        Y: =697
+        ZIndex: =16
+
+    "'COPY THIS ContainerScreen_1' As groupContainer":
+        Fill: =ColorFade(LIGHTGREYCOLOR,0.8)
+        Height: =436
+        Width: =screenSize
+        X: =334
+        Y: =200
+        ZIndex: =17
+
+        ContainerFixed As groupContainer.horizontalAutoLayoutContainer:
+            BorderThickness: =1
+            Fill: =ColorFade(ACCENT2COLOR,0.9)
+            Height: =435
+            LayoutGap: =8
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowX: =LayoutOverflow.Scroll
+            LayoutWrap: =true
+            Width: =Parent.Width
+            ZIndex: =2
+
+            "'Container 12 Columns_2' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                Fill: =ColorFade(PRIMARYCOLOR,0.9)
+                Height: =100
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =1200
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =10
+                PaddingLeft: =10
+                PaddingRight: =10
+                PaddingTop: =10
+                Width: =Self.LayoutMinWidth
+                ZIndex: =1
+
+            "'Container 6 Columns_5' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                Fill: =ColorFade(PRIMARYCOLOR,0.9)
+                Height: =100
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =600-5
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =10
+                PaddingLeft: =10
+                PaddingRight: =10
+                PaddingTop: =10
+                Width: =Self.LayoutMinWidth
+                ZIndex: =2
+
+            "'Container 6 Columns_6' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                Fill: =ColorFade(PRIMARYCOLOR,0.9)
+                Height: =100
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =600-5
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =10
+                PaddingLeft: =10
+                PaddingRight: =10
+                PaddingTop: =10
+                Width: =Self.LayoutMinWidth
+                ZIndex: =3
+
+            "'Container 3 Columns_9' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                Fill: =ColorFade(PRIMARYCOLOR,0.9)
+                FillPortions: =0
+                Height: =100
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =300-6
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =10
+                PaddingLeft: =10
+                PaddingRight: =10
+                PaddingTop: =10
+                Width: =Self.LayoutMinWidth
+                ZIndex: =4
+
+            "'Container 3 Columns_10' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                Fill: =ColorFade(PRIMARYCOLOR,0.9)
+                FillPortions: =0
+                Height: =100
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =300-6
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =10
+                PaddingLeft: =10
+                PaddingRight: =10
+                PaddingTop: =10
+                Width: =Self.LayoutMinWidth
+                ZIndex: =5
+
+            "'Container 3 Columns_11' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                Fill: =ColorFade(PRIMARYCOLOR,0.9)
+                FillPortions: =0
+                Height: =100
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =300-6
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =10
+                PaddingLeft: =10
+                PaddingRight: =10
+                PaddingTop: =10
+                Width: =Self.LayoutMinWidth
+                ZIndex: =6
+
+            "'Container 3 Columns_12' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                Fill: =ColorFade(PRIMARYCOLOR,0.9)
+                FillPortions: =0
+                Height: =100
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =300-6
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =10
+                PaddingLeft: =10
+                PaddingRight: =10
+                PaddingTop: =10
+                Width: =Self.LayoutMinWidth
+                ZIndex: =7
+
+            "'Container 2 Columns_13' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                Fill: =ColorFade(PRIMARYCOLOR,0.9)
+                FillPortions: =0
+                Height: =100
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =1200/6-7
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =10
+                PaddingLeft: =10
+                PaddingRight: =10
+                PaddingTop: =10
+                Width: =Self.LayoutMinWidth
+                ZIndex: =8
+
+            "'Container 2 Columns_14' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                Fill: =ColorFade(PRIMARYCOLOR,0.9)
+                FillPortions: =0
+                Height: =100
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =1200/6-7
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =10
+                PaddingLeft: =10
+                PaddingRight: =10
+                PaddingTop: =10
+                Width: =Self.LayoutMinWidth
+                ZIndex: =9
+
+            "'Container 2 Columns_15' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                Fill: =ColorFade(PRIMARYCOLOR,0.9)
+                FillPortions: =0
+                Height: =100
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =1200/6-7
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =10
+                PaddingLeft: =10
+                PaddingRight: =10
+                PaddingTop: =10
+                Width: =Self.LayoutMinWidth
+                ZIndex: =10
+
+            "'Container 2 Columns_16' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                Fill: =ColorFade(PRIMARYCOLOR,0.9)
+                FillPortions: =0
+                Height: =100
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =1200/6-7
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =10
+                PaddingLeft: =10
+                PaddingRight: =10
+                PaddingTop: =10
+                Width: =Self.LayoutMinWidth
+                ZIndex: =11
+
+            "'Container 2 Columns_17' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                Fill: =ColorFade(PRIMARYCOLOR,0.9)
+                FillPortions: =0
+                Height: =100
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =1200/6-7
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =10
+                PaddingLeft: =10
+                PaddingRight: =10
+                PaddingTop: =10
+                Width: =Self.LayoutMinWidth
+                ZIndex: =12
+
+            "'Container 2 Columns_18' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                Fill: =ColorFade(PRIMARYCOLOR,0.9)
+                FillPortions: =0
+                Height: =100
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =1200/6-7
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =10
+                PaddingLeft: =10
+                PaddingRight: =10
+                PaddingTop: =10
+                Width: =Self.LayoutMinWidth
+                ZIndex: =13
+

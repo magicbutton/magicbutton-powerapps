@@ -1,0 +1,189 @@
+ScreenStyleDocElevations As screen:
+
+    Rectangle1_22 As rectangle:
+        Fill: =RGBA(230, 230, 230, 1)
+        Height: =111
+        Width: =Parent.Width
+        ZIndex: =1
+
+    Label1_46 As label:
+        Font: =Font.Lato
+        Height: =32
+        Text: ="Shadows indicating an objects relative elevation. "
+        Width: =1072
+        X: =124
+        Y: =55
+        ZIndex: =2
+
+    Label2_56 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Bold
+        Size: =18
+        Text: |-
+            ="Elevations
+            "
+        Width: =210
+        X: =124
+        Y: =23
+        ZIndex: =3
+
+    Icon1_19 As icon.BackArrow:
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(ScreenHome)
+        X: =35
+        Y: =23
+        ZIndex: =4
+
+    Label2_57 As label:
+        Font: =Font.Lato
+        Height: =46
+        Text: ="To reuse this, copy the relevant image containing the elevation you like to use into your project"
+        Width: =1101
+        X: =95
+        Y: =174
+        ZIndex: =5
+
+    Label2_58 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: |-
+            ="How to use
+            "
+        Width: =408
+        X: =95
+        Y: =134
+        ZIndex: =6
+
+    Label2_61 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: |-
+            ="Elevation - 1
+            "
+        Width: =181
+        X: =95
+        Y: =276
+        ZIndex: =7
+
+    Label2_62 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: |-
+            ="Elevation - 2
+            "
+        Width: =181
+        X: =399
+        Y: =276
+        ZIndex: =8
+
+    Label2_63 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: |-
+            ="Elevation - 3
+            "
+        Width: =181
+        X: =730
+        Y: =276
+        ZIndex: =9
+
+    Label2_64 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: |-
+            ="Elevation - 4
+            "
+        Width: =181
+        X: =1030
+        Y: =276
+        ZIndex: =10
+
+    Elevation4Image As image:
+        Height: =315
+        Image: |-
+            ="data:image/svg+xml;utf8, "&EncodeUrl("<svg width='235' height='225' viewBox='0 0 235 225' fill='none' xmlns='http://www.w3.org/2000/svg'>
+            <g filter='url(#filter0_d_199_257)'>
+            <rect x='24' y='8' width='187' height='177' rx='4' fill='white'/>
+            </g>
+            <defs>
+            <filter id='filter0_d_199_257' x='0' y='0' width='235' height='225' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'>
+            <feFlood flood-opacity='0' result='BackgroundImageFix'/>
+            <feColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/>
+            <feOffset dy='16'/>
+            <feGaussianBlur stdDeviation='12'/>
+            <feColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0'/>
+            <feBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_199_257'/>
+            <feBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_199_257' result='shape'/>
+            </filter>
+            </defs>
+            </svg>
+            ")
+        Width: =312
+        X: =1030
+        Y: =332
+        ZIndex: =11
+
+    Elevation3Image As image:
+        Height: =298
+        Image: |-
+            ="data:image/svg+xml;utf8, "&EncodeUrl("<svg width='219' height='209' viewBox='0 0 219 209' fill='none' xmlns='http://www.w3.org/2000/svg'>
+            <g filter='url(#filter0_d_199_255)'>
+            <rect x='16' y='8' width='187' height='177' rx='4' fill='white'/>
+            </g>
+            <defs>
+            <filter id='filter0_d_199_255' x='0' y='0' width='219' height='209' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'>
+            <feFlood flood-opacity='0' result='BackgroundImageFix'/>
+            <feColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/>
+            <feOffset dy='8'/>
+            <feGaussianBlur stdDeviation='8'/>
+            <feColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0'/>
+            <feBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_199_255'/>
+            <feBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_199_255' result='shape'/>
+            </filter>
+            </defs>
+            </svg>
+            ")
+        Width: =295
+        X: =706
+        Y: =332
+        ZIndex: =12
+
+    Elevation2Image As image:
+        Height: =277
+        Image: |-
+            ="data:image/svg+xml;utf8, "&EncodeUrl("<svg width='203' height='193' viewBox='0 0 203 193' fill='none' xmlns='http://www.w3.org/2000/svg'><g filter='url(#filter0_d_199_253)'><rect x='8' y='4' width='187' height='177' rx='4' fill='white'/></g><defs><filter id='filter0_d_199_253' x='0' y='0' width='203' height='193' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'><feFlood flood-opacity='0' result='BackgroundImageFix'/><feColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/><feOffset dy='4'/><feGaussianBlur stdDeviation='4'/><feColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.16 0'/><feBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_199_253'/><feBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_199_253' result='shape'/></filter></defs></svg>")
+        Width: =279
+        X: =382
+        Y: =332
+        ZIndex: =13
+
+    Elevation1Image As image:
+        Height: =277
+        Image: |-
+            ="data:image/svg+xml;utf8, "&EncodeUrl("<svg width='195' height='185' viewBox='0 0 195 185' fill='none' xmlns='http://www.w3.org/2000/svg'>
+            <g filter='url(#filter0_d_72_63)'>
+            <rect x='4' y='2' width='187' height='177' rx='4' fill='white'/>
+            </g>
+            <defs>
+            <filter id='filter0_d_72_63' x='0' y='0' width='195' height='185' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'>
+            <feFlood flood-opacity='0' result='BackgroundImageFix'/>
+            <feColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0' result='hardAlpha'/>
+            <feOffset dy='2'/>
+            <feGaussianBlur stdDeviation='2'/>
+            <feColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.24 0'/>
+            <feBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow_72_63'/>
+            <feBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow_72_63' result='shape'/>
+            </filter>
+            </defs>
+            </svg>
+            ")
+        Width: =267
+        X: =81
+        Y: =332
+        ZIndex: =14
+

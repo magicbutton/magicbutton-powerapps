@@ -1,0 +1,759 @@
+ColorPaletteScreen As screen:
+
+    Rectangle1 As rectangle:
+        Fill: =RGBA(230, 230, 230, 1)
+        Height: =111
+        Width: =Parent.Width
+        ZIndex: =1
+
+    Label1_2 As label:
+        Font: =Font.Lato
+        Height: =32
+        Text: ="Distinct, harmonious color theme."
+        Width: =1072
+        X: =124
+        Y: =55
+        ZIndex: =3
+
+    Label2_2 As label:
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Bold
+        Size: =18
+        Text: ="Color Palette"
+        Width: =210
+        X: =124
+        Y: =23
+        ZIndex: =4
+
+    Icon1 As icon.BackArrow:
+        Color: =PRIMARYCOLOR
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(ScreenHome)
+        X: =35
+        Y: =23
+        ZIndex: =61
+
+    ContainerPrimaryColorPalette As groupContainer:
+        Height: =388
+        Width: =380
+        X: =84
+        Y: =87
+        ZIndex: =62
+
+        ColorPrimary As label:
+            Color: =PRIMARYCOLOR
+            Fill: =ColorFade(PRIMARYCOLOR,0)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =60
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =164
+            ZIndex: =1
+
+        ColorPrimary_2 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(PRIMARYCOLOR,0.4
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =224
+            ZIndex: =2
+
+        ColorPrimary_3 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(PRIMARYCOLOR,0.6
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =254
+            ZIndex: =3
+
+        ColorPrimary_4 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(PRIMARYCOLOR,0.8
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =284
+            ZIndex: =4
+
+        ColorPrimary_5 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(PRIMARYCOLOR,0.9
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =314
+            ZIndex: =5
+
+        Label6 As label:
+            Font: =Font.Lato
+            Text: ="Primary"
+            X: =40
+            Y: =40
+            ZIndex: =6
+
+        Label7 As label:
+            Color: =RGBA(128, 128, 128, 1)
+            Font: =Font.Lato
+            Height: =65
+            Size: =10
+            Text: ="This color should be displayed most frequently and be used for important actions"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =300
+            X: =40
+            Y: =84
+            ZIndex: =7
+
+        ColorPrimary_36 As label:
+            Color: =PRIMARYCOLOR
+            Fill: =ColorFade(PRIMARYCOLOR,-0.2)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =134
+            ZIndex: =8
+
+    ContainerAccess1ColorPalette As groupContainer:
+        Height: =384
+        Width: =380
+        X: =508
+        Y: =91
+        ZIndex: =63
+
+        ColorPrimary_6 As label:
+            Color: =PRIMARYCOLOR
+            Fill: =ColorFade(ACCENT1COLOR,0)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =60
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =164
+            ZIndex: =1
+
+        ColorPrimary_8 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(ACCENT1COLOR,0.4
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =224
+            ZIndex: =2
+
+        ColorPrimary_9 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(ACCENT1COLOR,0.6
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =254
+            ZIndex: =3
+
+        ColorPrimary_10 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(ACCENT1COLOR,0.8
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =284
+            ZIndex: =4
+
+        ColorPrimary_11 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(ACCENT1COLOR,0.9
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =314
+            ZIndex: =5
+
+        Label6_1 As label:
+            Font: =Font.Lato
+            Height: =44
+            Text: ="Accent 1 color variants"
+            Width: =250
+            X: =40
+            Y: =40
+            ZIndex: =6
+
+        Label7_1 As label:
+            Color: =RGBA(128, 128, 128, 1)
+            Font: =Font.Lato
+            Height: =65
+            Size: =10
+            Text: ="This color should be displayed most frequently and be used for important actions"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =300
+            X: =40
+            Y: =84
+            ZIndex: =7
+
+        ColorPrimary_37 As label:
+            Color: =PRIMARYCOLOR
+            Fill: =ColorFade(ACCENT1COLOR,-0.2)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =134
+            ZIndex: =8
+
+    ContainerAccess2ColorPalette As groupContainer:
+        Height: =384
+        Width: =380
+        X: =932
+        Y: =91
+        ZIndex: =64
+
+        ColorPrimary_12 As label:
+            Color: =PRIMARYCOLOR
+            Fill: =ColorFade(ACCENT2COLOR,0)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =60
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =164
+            ZIndex: =1
+
+        ColorPrimary_14 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(ACCENT2COLOR,0.4
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =224
+            ZIndex: =2
+
+        ColorPrimary_15 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(ACCENT2COLOR,0.6
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =254
+            ZIndex: =3
+
+        ColorPrimary_16 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(ACCENT2COLOR,0.8
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =284
+            ZIndex: =4
+
+        ColorPrimary_17 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(ACCENT2COLOR,0.9
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =314
+            ZIndex: =5
+
+        Label6_2 As label:
+            Font: =Font.Lato
+            Height: =44
+            Text: ="Accent 2 color variants"
+            Width: =250
+            X: =40
+            Y: =40
+            ZIndex: =6
+
+        Label7_2 As label:
+            Color: =RGBA(128, 128, 128, 1)
+            Font: =Font.Lato
+            Height: =65
+            Size: =10
+            Text: ="This color should be applied sparingly to highlight information or add personality"
+            VerticalAlign: =VerticalAlign.Top
+            Width: =300
+            X: =40
+            Y: =83
+            ZIndex: =7
+
+        ColorPrimary_38 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(ACCENT2COLOR,-0.2
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =134
+            ZIndex: =8
+
+    ContainerSuccessColorPalette As groupContainer:
+        Height: =383
+        Width: =380
+        X: =84
+        Y: =385
+        ZIndex: =65
+
+        ColorPrimary_18 As label:
+            Color: =SUCCESSCOLOR
+            Fill: =ColorFade(SUCCESSCOLOR,0)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =60
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =163
+            ZIndex: =1
+
+        ColorPrimary_20 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(SUCCESSCOLOR,0.4
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =223
+            ZIndex: =2
+
+        ColorPrimary_21 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(SUCCESSCOLOR,0.6
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =253
+            ZIndex: =3
+
+        ColorPrimary_22 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(SUCCESSCOLOR,0.8
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =283
+            ZIndex: =4
+
+        ColorPrimary_23 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(SUCCESSCOLOR,0.9
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =313
+            ZIndex: =5
+
+        Label6_3 As label:
+            Font: =Font.Lato
+            Text: ="Success"
+            X: =40
+            Y: =40
+            ZIndex: =6
+
+        Label7_3 As label:
+            Color: =RGBA(128, 128, 128, 1)
+            Font: =Font.Lato
+            Height: =65
+            Size: =10
+            Text: ="This color should be used to show positive feedback or status."
+            VerticalAlign: =VerticalAlign.Top
+            Width: =300
+            X: =40
+            Y: =86
+            ZIndex: =7
+
+        ColorPrimary_25 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(SUCCESSCOLOR,-0.2
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =138
+            ZIndex: =8
+
+    ContainerWarningColorPalette As groupContainer:
+        Height: =383
+        Width: =380
+        X: =508
+        Y: =385
+        ZIndex: =66
+
+        ColorPrimary_24 As label:
+            Color: =PRIMARYCOLOR
+            Fill: =ColorFade(WARNINGCOLOR,0)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =60
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =163
+            ZIndex: =1
+
+        ColorPrimary_26 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(WARNINGCOLOR,0.4
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =223
+            ZIndex: =2
+
+        ColorPrimary_27 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(WARNINGCOLOR,0.6
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =253
+            ZIndex: =3
+
+        ColorPrimary_28 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(WARNINGCOLOR,0.8
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =283
+            ZIndex: =4
+
+        ColorPrimary_29 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(WARNINGCOLOR,0.9
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =313
+            ZIndex: =5
+
+        Label6_4 As label:
+            Font: =Font.Lato
+            Height: =44
+            Text: ="Warning"
+            Width: =250
+            X: =40
+            Y: =40
+            ZIndex: =6
+
+        Label7_4 As label:
+            Color: =RGBA(128, 128, 128, 1)
+            Font: =Font.Lato
+            Height: =65
+            Size: =10
+            Text: ="This color should be used to show warning feedback or status."
+            VerticalAlign: =VerticalAlign.Top
+            Width: =300
+            X: =40
+            Y: =86
+            ZIndex: =7
+
+        ColorPrimary_31 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(WARNINGCOLOR,-0.2
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =40
+            Y: =138
+            ZIndex: =8
+
+    ContainerErrorColorPalette As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =67
+
+        ColorPrimary_30 As label:
+            Color: =PRIMARYCOLOR
+            Fill: =ColorFade(ERRORCOLOR,0)
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =60
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =972
+            Y: =558
+            ZIndex: =47
+
+        ColorPrimary_32 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(ERRORCOLOR,0.4
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =972
+            Y: =618
+            ZIndex: =49
+
+        ColorPrimary_33 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(ERRORCOLOR,0.6
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =972
+            Y: =648
+            ZIndex: =50
+
+        ColorPrimary_34 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(ERRORCOLOR,0.8
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =972
+            Y: =678
+            ZIndex: =51
+
+        ColorPrimary_35 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(ERRORCOLOR,0.9
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =972
+            Y: =708
+            ZIndex: =52
+
+        Label6_5 As label:
+            Font: =Font.Lato
+            Height: =44
+            Text: ="Error"
+            Width: =250
+            X: =972
+            Y: =435
+            ZIndex: =53
+
+        Label7_5 As label:
+            Color: =RGBA(128, 128, 128, 1)
+            Font: =Font.Lato
+            Height: =65
+            Size: =10
+            Text: ="This color should be used to show negative feedback or status."
+            VerticalAlign: =VerticalAlign.Top
+            Width: =300
+            X: =972
+            Y: =481
+            ZIndex: =54
+
+        ColorPrimary_39 As label:
+            Color: =PRIMARYCOLOR
+            Fill: |-
+                =ColorFade(ERRORCOLOR,-0.2
+                )
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =30
+            PaddingLeft: =15
+            PaddingRight: =15
+            Text: =""
+            Width: =300
+            X: =972
+            Y: =533
+            ZIndex: =60
+

@@ -1,0 +1,49 @@
+TabsPillTab As CanvasComponent:
+    AccentColor: |
+        =ColorValue("#B57BFF")
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =40
+    IsDisabled: =true
+    IsSelected: =true
+    LightGrey: |-
+        =ColorValue("#666666")
+    OnReset: =Set(_TabId,TabsPillTab.TabID)
+    OnTabSelected: =TabsPillTab.TabID
+    PrimaryColor: |+
+        =ColorValue("#3E66FB")
+        
+        
+    TabID: ="Text"
+    Text: ="Tab name"
+    Width: =150
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Container9_2 As groupContainer:
+        Height: =Parent.Height
+        Width: =Parent.Width
+        ZIndex: =1
+
+        ButtonPrimary_22 As button:
+            BorderColor: =Self.Color
+            BorderStyle: =If(TabsPillTab.IsSelected, BorderStyle.Solid,BorderStyle.None)
+            BorderThickness: =0
+            Color: =If(TabsPillTab.IsSelected, TabsPillTab.PrimaryColor,TabsPillTab.LightGrey)
+            DisabledColor: =ColorFade(TabsPillTab.LightGrey,0.5)
+            DisplayMode: =If(TabsPillTab.IsDisabled,DisplayMode.Disabled, DisplayMode.Edit)
+            Fill: |-
+                =
+                
+                If(TabsPillTab.IsSelected, ColorFade( TabsPillTab.PrimaryColor,0.9),RGBA(0,0,0,0))
+            Font: =Font.Lato
+            Height: =Parent.Height
+            HoverBorderColor: =TabsPillTab.AccentColor
+            HoverFill: =TabsPillTab.AccentColor
+            OnSelect: =TabsPillTab.OnTabSelected()
+            PressedBorderColor: =RGBA(0,0,0,0)
+            Text: =TabsPillTab.Text
+            Width: =Parent.Width
+            X: =1
+            ZIndex: =1
+

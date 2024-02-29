@@ -1,0 +1,157 @@
+SearchBarComponentScreen As screen:
+
+    Video1 As videoPlayback:
+        Height: =413
+        Width: =1101
+        X: =129
+        Y: =355
+        ZIndex: =1
+
+    Label3_3 As label:
+        Color: =RGBA(56, 96, 178, 1)
+        Font: =Font.Lato
+        Height: =61
+        OnSelect: =Launch(Self.Text)
+        Text: |-
+            ="https://docs.microsoft.com/en-us/powerapps/maker/canvas-apps/functions/function-showerror"
+        Visible: =false
+        Width: =905
+        X: =111
+        Y: =707
+        ZIndex: =2
+
+    Rectangle1_20 As rectangle:
+        Fill: =RGBA(230, 230, 230, 1)
+        Height: =111
+        Width: =Parent.Width
+        ZIndex: =3
+
+    Label1_42 As label:
+        Font: =Font.Lato
+        Height: =32
+        Text: ="The component allows you to control a context variable which can be used to run a search and control the visibility of other elements"
+        Width: =1072
+        X: =124
+        Y: =55
+        ZIndex: =4
+
+    Label2_48 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Bold
+        Height: =46
+        Size: =18
+        Text: ="Search Bar Component"
+        Width: =570
+        X: =124
+        Y: =23
+        ZIndex: =5
+
+    Icon1_17 As icon.BackArrow:
+        Color: =PRIMARYCOLOR
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(ScreenHome)
+        X: =35
+        Y: =23
+        ZIndex: =6
+
+    SearchBarComponent As groupContainer.manualLayoutContainer:
+        Height: =55
+        Width: =1113
+        X: =129
+        Y: =259
+        ZIndex: =7
+
+        SearchBarTextInput As text:
+            Default: =
+            Font: =Font.Lato
+            Height: =Parent.Height
+            HintText: ="Enter a search term"
+            OnChange: =
+            Width: =Parent.Width
+            ZIndex: =1
+
+        SearchBarClear As icon.Cancel:
+            Height: =Parent.Height
+            Icon: =Icon.Cancel
+            OnSelect: |-
+                =UpdateContext({searchFor:"",lastSearchFor:"###"});Reset(SearchBarTextInput)
+            PaddingBottom: =5
+            PaddingLeft: =5
+            PaddingRight: =5
+            PaddingTop: =5
+            Visible: =!IsBlankOrError(searchFor)
+            Width: =Parent.Height
+            X: =Parent.Width-Self.Width
+            ZIndex: =2
+
+        SearchBarTimer As timer:
+            AutoStart: =true
+            Duration: =200
+            Font: =Font.Lato
+            OnTimerEnd: |-
+                =If(
+                    (SearchBarTextInput.Text <> lastSearchFor),
+                    UpdateContext(
+                        {
+                            searchFor: SearchBarTextInput.Text,
+                            lastSearchFor: SearchBarTextInput.Text
+                        }
+                    )
+                )
+            Repeat: =true
+            Visible: =false
+            X: =40
+            Y: =15
+            ZIndex: =3
+
+    Label2_50 As label:
+        Font: =Font.Lato
+        Height: =46
+        Text: ="To reuse this, copy the ""SearchBarComponent"" to your own project. You can also include the ""SearchResultComponent"" - If you copy both at once, the panel will stick to the position if the search input field"
+        Width: =1101
+        X: =129
+        Y: =192
+        ZIndex: =8
+
+    Label2_51 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: |-
+            ="How to use
+            "
+        Width: =408
+        X: =129
+        Y: =152
+        ZIndex: =9
+
+    SearchResultComponent As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(202, 202, 202, 1)
+        Height: =Parent.Height-SearchBarComponent.Y-SearchBarComponent.Height-20
+        Visible: =!IsBlank(searchFor)
+        Width: =SearchBarComponent.Width
+        X: =SearchBarComponent.X
+        Y: =SearchBarComponent.Y+SearchBarComponent.Height
+        ZIndex: =10
+
+        Label20 As label:
+            Align: =Align.Center
+            Color: =RGBA(166, 166, 166, 1)
+            Font: =Font.Lato
+            Height: =Parent.Height
+            Size: =40
+            Text: |-
+                ="Searching for """ & searchFor& """
+                
+                Search Results go here"
+            Width: =Parent.Width
+            ZIndex: =1
+
+    Image3_2 As image:
+        Height: =71
+        Image: =JUMPTO.logo
+        Width: =71
+        X: =Parent.Width- Self.Width-20
+        Y: =20
+        ZIndex: =11
+

@@ -1,0 +1,55 @@
+TabsUnderscore As CanvasComponent:
+    AccentColor: |
+        =ColorValue("#B57BFF")
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =40
+    IsDisabled: =true
+    IsSelected: =true
+    LightGrey: |-
+        =ColorValue("#666666")
+    OnReset: =Set(_TabId,TabsUnderscore.TabID)
+    OnTabSelected: =TabsUnderscore.TabID
+    PrimaryColor: |+
+        =ColorValue("#3E66FB")
+        
+        
+    TabID: ="Text"
+    Text: ="Tab name"
+    Width: =160
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    ButtonPrimary_39 As button:
+        BorderColor: =RGBA(0,0,0,0)
+        BorderStyle: =If(TabsUnderscore.IsSelected, BorderStyle.Solid,BorderStyle.None)
+        BorderThickness: =0
+        Color: =TabsUnderscore.PrimaryColor
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        DisplayMode: =If(TabsUnderscore.IsDisabled,DisplayMode.Disabled, DisplayMode.Edit)
+        Fill: |-
+            =
+              RGBA(0,0,0,0)
+        Font: =Font.Lato
+        FontWeight: =If(TabsUnderscore.IsSelected,FontWeight.Bold, FontWeight.Semibold)
+        Height: =Parent.Height
+        HoverBorderColor: =RGBA(0,0,0,0)
+        HoverColor: =TabsUnderscore.AccentColor
+        HoverFill: =RGBA(0,0,0,0)
+        OnSelect: =TabsUnderscore.OnTabSelected()
+        PaddingTop: =1
+        PressedBorderColor: =RGBA(0,0,0,0)
+        PressedColor: =ColorFade( TabsUnderscore.AccentColor,-0.3)
+        PressedFill: =RGBA(0,0,0,0)
+        Text: =TabsUnderscore.Text
+        Width: =Parent.Width-2
+        X: =1
+        ZIndex: =2
+
+    Rectangle3 As rectangle:
+        Height: =4
+        Visible: =TabsUnderscore.IsSelected
+        Width: =Parent.Width
+        Y: =Parent.Height-Self.Height
+        ZIndex: =3
+

@@ -1,0 +1,71 @@
+"'Screen Basic Inputs' As screen":
+
+    Button2_24 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        OnSelect: =Navigate(BadgesScreen)
+        Text: ="Badges"
+        X: =99
+        Y: =178
+        ZIndex: =2
+
+    Button2_27 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        OnSelect: =Navigate(ButtonsScreen)
+        Text: ="Buttons"
+        X: =99
+        Y: =257
+        ZIndex: =9
+
+    Button4_1 As button:
+        Font: =Font.Lato
+        OnSelect: =Switch(I365Context.folder,"Alert Bar",Navigate(AlertBarsScreen,ScreenTransition.Fade),0)
+        Text: ="Button"
+        Visible: =false
+        X: =1152
+        Y: =656
+        ZIndex: =25
+
+    Rectangle1_24 As rectangle:
+        Fill: =RGBA(230, 230, 230, 1)
+        Height: =111
+        Width: =Parent.Width
+        ZIndex: =32
+
+    Label1_48 As label:
+        Font: =Font.Lato
+        Height: =32
+        Text: ="Fundamental input components"
+        Width: =1072
+        X: =124
+        Y: =55
+        ZIndex: =33
+
+    Label2_70 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Bold
+        Height: =46
+        Size: =18
+        Text: ="Basic Inputs"
+        Width: =570
+        X: =124
+        Y: =23
+        ZIndex: =34
+
+    Icon1_21 As icon.BackArrow:
+        Color: =PRIMARYCOLOR
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(ScreenHome)
+        X: =35
+        Y: =23
+        ZIndex: =35
+
+    Image3_4 As image:
+        Height: =71
+        Image: =JUMPTO.logo
+        Width: =71
+        X: =Parent.Width- Self.Width-20
+        Y: =20
+        ZIndex: =36
+

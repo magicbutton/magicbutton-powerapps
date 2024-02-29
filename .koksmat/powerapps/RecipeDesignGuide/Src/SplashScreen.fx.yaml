@@ -1,0 +1,45 @@
+SplashScreen As screen:
+    OnVisible: =Set(HomePage,ScreenHome)
+
+    TitleImage As image:
+        Height: =App.Height
+        Image: =Final_02_1000
+        OnSelect: =Navigate(ScreenHome)
+        Width: =App.Width
+        ZIndex: =1
+
+    TitleLable As label:
+        Align: =LayoutAlignItems.Center
+        Fill: =RGBA(255, 255, 255, 0.64)
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Lighter
+        Height: =111
+        Size: =24
+        Text: ="Recipe Design Guide"
+        Width: =App.Width
+        Y: =App.Height-(TitleLable.Height)
+        ZIndex: =2
+
+    TimerSplashScreen As timer:
+        AutoStart: =true
+        Duration: =4500
+        Font: =Font.Lato
+        OnTimerEnd: |-
+            =Navigate(
+                ScreenHome,
+                ScreenTransition.Fade
+            );Set(ExchangeStatus,true)
+        Visible: =false
+        ZIndex: =3
+
+    Labelby As label:
+        Align: =TextPosition.Right
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Lighter
+        Height: =39
+        Text: ="by jumpto365.com"
+        Width: =250
+        X: =App.Width-Labelby.Width
+        Y: =App.Height-Labelby.Height
+        ZIndex: =5
+

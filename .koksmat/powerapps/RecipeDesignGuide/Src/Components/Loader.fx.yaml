@@ -1,0 +1,39 @@
+Loader As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =772
+    Width: =1302
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Rectangle1_1 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledFill: =RGBA(233, 237, 241, 0.7)
+        Fill: =RGBA(233, 237, 241, 0.7)
+        FocusedBorderThickness: =4
+        Height: =772
+        HoverFill: =RGBA(233, 237, 241, 0.7)
+        OnSelect: =true
+        PressedFill: =RGBA(233, 237, 241, 0.7)
+        Width: =1302
+        ZIndex: =1
+
+    Image11_1 As image:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: ='Pulse-1s-204px'
+        OnSelect: =true
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        X: =599
+        Y: =334
+        ZIndex: =2
+

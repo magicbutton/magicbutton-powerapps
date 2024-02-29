@@ -1,0 +1,455 @@
+ScreenHome As screen:
+
+    Button2 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        OnSelect: =Navigate(AlertBarsScreen)
+        Text: ="Alerts"
+        X: =1090
+        Y: =181
+        ZIndex: =1
+
+    Button2_1 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        OnSelect: =Navigate(BadgesScreen)
+        Text: ="Badges"
+        X: =900
+        Y: =235
+        ZIndex: =2
+
+    Button2_2 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        OnSelect: =Navigate(ColorPaletteScreen)
+        Text: ="Color Palette"
+        X: =1012
+        Y: =468
+        ZIndex: =3
+
+    Rectangle1_4 As rectangle:
+        Fill: =RGBA(230, 230, 230, 1)
+        Height: =111
+        Width: =Parent.Width
+        ZIndex: =5
+
+    Label1_5 As label:
+        Font: =Font.Lato
+        Height: =32
+        Text: ="Click any area to get started"
+        Width: =1072
+        X: =124
+        Y: =59
+        ZIndex: =6
+
+    Label2_5 As label:
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Bold
+        Height: =35
+        Size: =18
+        Text: |-
+            ="jumpto365 Recipes: Foundational Parts & Design System v1.0"
+        Width: =735
+        X: =124
+        Y: =24
+        ZIndex: =7
+
+    Image3 As image:
+        Height: =71
+        Image: =JUMPTO.logo
+        Width: =71
+        X: =26
+        Y: =25
+        ZIndex: =8
+
+    Button2_3 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        OnSelect: =Navigate(ButtonsScreen)
+        Text: ="Buttons"
+        X: =900
+        Y: =292
+        ZIndex: =9
+
+    Button2_4 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        OnSelect: =Navigate(TabsPillScreen)
+        Text: ="Pill"
+        X: =124
+        Y: =467
+        ZIndex: =10
+
+    Button2_5 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        OnSelect: =Navigate(TabsFolderScreen)
+        Text: ="Folder"
+        X: =124
+        Y: =528
+        ZIndex: =11
+
+    Label2_18 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: |-
+            ="Tabs
+            "
+        Width: =210
+        X: =124
+        Y: =412
+        ZIndex: =12
+
+    Button2_6 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        OnSelect: =Navigate(TopNavigationScreen)
+        Text: ="Top"
+        X: =355
+        Y: =467
+        ZIndex: =13
+
+    Label2_25 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: |-
+            ="Navigation
+            "
+        Width: =210
+        X: =355
+        Y: =412
+        ZIndex: =14
+
+    Button2_7 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        OnSelect: =Navigate(SideNavigationScreen)
+        Text: ="Side"
+        X: =355
+        Y: =528
+        ZIndex: =15
+
+    Button2_8 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        OnSelect: =Navigate(ButtomNavigationScreen)
+        Text: ="Buttom"
+        X: =355
+        Y: =591
+        ZIndex: =16
+
+    Label2_36 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: |-
+            ="Grid
+            "
+        Width: =210
+        X: =604
+        Y: =414
+        ZIndex: =17
+
+    Button2_9 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        OnSelect: =Navigate(FluidGridScreeen)
+        Text: ="Fluid"
+        X: =604
+        Y: =467
+        ZIndex: =18
+
+    Button2_10 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        OnSelect: =Navigate(FixedGridScreeen)
+        Text: ="Fixed"
+        X: =604
+        Y: =528
+        ZIndex: =19
+
+    Label2_41 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: |-
+            ="Utility
+            "
+        Width: =210
+        X: =814
+        Y: =412
+        ZIndex: =20
+
+    Button2_11 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        OnSelect: =Navigate(ContextInfoScreen)
+        Text: ="Context"
+        X: =814
+        Y: =467
+        ZIndex: =21
+
+    Label2_45 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: |-
+            ="Full Pages
+            "
+        Width: =210
+        X: =584
+        Y: =130
+        ZIndex: =22
+
+    Button2_12 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        OnSelect: =Navigate(ShopScreen)
+        Text: ="Shop"
+        X: =580
+        Y: =180
+        ZIndex: =23
+
+    Button2_13 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        OnSelect: =Navigate('TypographyScreen Large')
+        Text: ="Typography"
+        X: =1206
+        Y: =468
+        ZIndex: =24
+
+    Button4 As button:
+        Font: =Font.Lato
+        OnSelect: =Switch(I365Context.folder,"Alert Bar",Navigate(AlertBarsScreen,ScreenTransition.Fade),0)
+        Text: ="Button"
+        Visible: =false
+        X: =1152
+        Y: =656
+        ZIndex: =25
+
+    Label2_49 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: ="""Components"""
+        Width: =210
+        X: =900
+        Y: =130
+        ZIndex: =26
+
+    Button2_14 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        OnSelect: =Navigate(SearchBarComponentScreen)
+        Text: ="Search Bar"
+        X: =900
+        Y: =176
+        ZIndex: =27
+
+    Label2_52 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: |-
+            ="Design Elements
+            "
+        Width: =210
+        X: =1012
+        Y: =417
+        ZIndex: =28
+
+    Button2_15 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        OnSelect: =Navigate(ModalsBarComponentScreen)
+        Text: ="Modals"
+        X: =1090
+        Y: =236
+        ZIndex: =29
+
+    Button2_16 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        OnSelect: =Navigate(ScreenStyleDocImages)
+        Text: ="Images"
+        X: =1012
+        Y: =527
+        ZIndex: =30
+
+    Button2_17 As button:
+        Fill: =PRIMARYCOLOR
+        Font: =Font.Lato
+        OnSelect: =Navigate(ScreenStyleDocElevations)
+        Text: ="Elevations"
+        X: =1206
+        Y: =528
+        ZIndex: =31
+
+    Button5 As button:
+        Font: =Font.Lato
+        OnSelect: =Navigate('Screen Basic Inputs')
+        Text: ="Basic Inputs"
+        X: =124
+        Y: =176
+        ZIndex: =32
+
+    Button6 As button:
+        Font: =Font.Lato
+        OnSelect: |-
+            =Set(
+                WHITECOLOR,
+                ColorValue("#FFFFFF")
+            );
+            Set(
+                LIGHTGREYCOLOR,
+                ColorValue("#666666")
+            );
+            Set(
+                PRIMARYCOLOR,
+                ColorValue("#3E66FB")
+            );
+            Set(
+                SECONDARYCOLOR,
+                ColorValue("#B57BFF")
+            );
+            Set(
+                ACCENT1COLOR,
+                ColorValue("#FD8E39")
+            );
+            Set(
+                ACCENT2COLOR,
+                ColorValue("#FD8E39")
+            );
+            Set(
+                ERRORCOLOR,
+                ColorValue("#F03738")
+            );
+            Set(
+                WARNINGCOLOR,
+                ColorValue("#F3BB1C")
+            );
+            Set(
+                SUCCESSCOLOR,
+                ColorValue("#3CC13B")
+            );
+            Set(
+                JUMPTO,
+                {
+                    
+                    font: Font.'Segoe UI',
+                    breakPoints: {
+                        xxsmall: 200,
+                        xsmall: 300,
+                        small: 400,
+                        medium: 600,
+                        large: 800,
+                        xlarge: 1200,
+                        xxlarge: 1600,
+                        xxxlarge: 2000
+                    }
+                }
+            );
+            ClearCollect(
+                TeamsContext,
+                {
+                    source: Coalesce(
+                        Param("source"),
+                        "portal"
+                    ),
+                    groupId: Coalesce(
+                        Param("groupId"),
+                        "00000000-0000-0000-0000-000000000000"
+                    ),
+                    teamId: Coalesce(
+                        Param("teamId"),
+                        "19:[team-id]@thread.skype"
+                    ),
+                    channelId: Coalesce(
+                        Param("channelId"),
+                        "19:[channel-id]@thread.skype"
+                    ),
+                    teamName: Coalesce(
+                        Param("teamName"),
+                        "Team unknown"
+                    ),
+                    channelName: Coalesce(
+                        Param("channelName"),
+                        "Channel unknown"
+                    ),
+                    chatId: Coalesce(
+                        Param("chatId"),
+                        "19:[chat-id]@thread.skype"
+                    ),
+                    theme: Coalesce(
+                        If(
+                            Param("theme") = "{theme}",
+                            "default",
+                            Param("theme")
+                        ),
+                        "default"
+                    ),
+                    channelType: Coalesce(
+                        Param("channelType"),
+                        ""
+                    ),
+                    teamSiteUrl: Coalesce(
+                        Param("teamSiteUrl"),
+                        ""
+                    ),
+                    locale: Coalesce(
+                        Param("locale"),
+                        ""
+                    ),
+                    entityId: Coalesce(
+                        Param("entityId"),
+                        ""
+                    ),
+                    subEntityId: Coalesce(
+                        Param("subEntityId"),
+                        ""
+                    ),
+                    tid: Coalesce(
+                        Param("tid"),
+                        ""
+                    ),
+                    isFullScreen: Coalesce(
+                        Param("isFullScreen"),
+                        ""
+                    ),
+                    userLicenseType: Coalesce(
+                        Param("userLicenseType"),
+                        ""
+                    ),
+                    tenantSKU: Coalesce(
+                        Param("tenantSKU"),
+                        ""
+                    )
+                }
+            );
+            ClearCollect(
+                PowerAppContext,
+                {
+                    tenantId: Coalesce(
+                        Param("tenantId"),
+                        ""
+                    ),
+                    action: Coalesce(
+                        Param("action"),
+                        ""
+                    )
+                }
+            );
+            Set(
+                I365Context,
+                {
+                    folder: Text(Param("i365folder"))
+                }
+            )
+        Text: ="SET GLOBALS"
+        X: =124
+        Y: =269
+        ZIndex: =33
+

@@ -1,0 +1,48 @@
+TabsFolderTab As CanvasComponent:
+    AccentColor: |
+        =ColorValue("#B57BFF")
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =40
+    IsDisabled: =true
+    IsSelected: =true
+    LightGrey: |-
+        =ColorValue("#666666")
+    OnReset: =Set(_TabId,TabsFolderTab.TabID)
+    OnTabSelected: =TabsFolderTab.TabID
+    PrimaryColor: |+
+        =ColorValue("#3E66FB")
+        
+        
+    TabID: ="Text"
+    Text: ="Tab name"
+    Width: =150
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Container9_1 As groupContainer:
+        Height: =Parent.Height
+        Width: =Parent.Width
+        ZIndex: =1
+
+        ButtonPrimary_21 As button:
+            BorderColor: =Self.Color
+            BorderStyle: =If(TabsFolderTab.IsSelected, BorderStyle.Solid,BorderStyle.None)
+            BorderThickness: =1
+            Color: =If(TabsFolderTab.IsSelected, TabsFolderTab.LightGrey,TabsFolderTab.PrimaryColor)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            DisplayMode: =If(TabsFolderTab.IsDisabled,DisplayMode.Disabled, DisplayMode.Edit)
+            Fill: =RGBA(0,0,0,0)
+            Font: =Font.Lato
+            Height: =Parent.Height+10
+            HoverBorderColor: =TabsFolderTab.AccentColor
+            HoverFill: =TabsFolderTab.AccentColor
+            OnSelect: =TabsFolderTab.OnTabSelected()
+            PaddingBottom: =10
+            PaddingTop: =0
+            Text: =TabsFolderTab.Text
+            Width: =Parent.Width-2
+            X: =1
+            Y: =1
+            ZIndex: =1
+

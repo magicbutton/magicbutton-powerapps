@@ -1,0 +1,49 @@
+SideNavigationScreen As screen:
+
+    Rectangle1_9 As rectangle:
+        Fill: =RGBA(230, 230, 230, 1)
+        Height: =111
+        Width: =Parent.Width
+        ZIndex: =1
+
+    Label1_17 As label:
+        Font: =Font.Lato
+        Height: =32
+        Text: ="The navigation provides branding, navigation, information and alerts."
+        Width: =1072
+        X: =124
+        Y: =55
+        ZIndex: =2
+
+    Label2_21 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Bold
+        Size: =18
+        Text: |-
+            ="Navigation
+            "
+        Width: =210
+        X: =124
+        Y: =23
+        ZIndex: =3
+
+    Icon1_7 As icon.BackArrow:
+        Color: =PRIMARYCOLOR
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(ScreenHome)
+        X: =35
+        Y: =23
+        ZIndex: =4
+
+    Label2_22 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Semibold
+        Size: =16
+        Text: |-
+            ="Side Navigation
+            "
+        Width: =210
+        X: =134
+        Y: =130
+        ZIndex: =6
+

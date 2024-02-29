@@ -1,0 +1,162 @@
+<#---
+title: App
+---
+
+## OnStart
+The `App.OnStart` formula is used to initialize the app when it is first loaded. This is where you can set global variables, collections, and other app-wide settings.
+
+Here we setup some glboal variables for colors, breakpoints, and Teams context. We also setup a collection for the Teams context and PowerApp context.
+
+```javascript
+Set(
+    WHITECOLOR,
+    ColorValue("#FFFFFF")
+);
+Set(
+    LIGHTGREYCOLOR,
+    ColorValue("#666666")
+);
+Set(
+    PRIMARYCOLOR,
+    ColorValue("#3E66FB")
+);
+Set(
+    SECONDARYCOLOR,
+    ColorValue("#B57BFF")
+);
+Set(
+    ACCENT1COLOR,
+    ColorValue("#FD8E39")
+);
+Set(
+    ACCENT2COLOR,
+    ColorValue("#FD8E39")
+);
+Set(
+    ERRORCOLOR,
+    ColorValue("#F03738")
+);
+Set(
+    WARNINGCOLOR,
+    ColorValue("#F3BB1C")
+);
+Set(
+    SUCCESSCOLOR,
+    ColorValue("#3CC13B")
+);
+Set(
+    JUMPTO,
+    {
+        logo: 'Icon-2196',
+        font: Font.'Segoe UI',
+        breakPoints: {
+            xxsmall: 200,
+            xsmall: 300,
+            small: 400,
+            medium: 600,
+            large: 800,
+            xlarge: 1200,
+            xxlarge: 1600,
+            xxxlarge: 2000
+        }
+    }
+);
+ClearCollect(
+    TeamsContext,
+    {
+        source: Coalesce(
+            Param("source"),
+            "portal"
+        ),
+        groupId: Coalesce(
+            Param("groupId"),
+            "00000000-0000-0000-0000-000000000000"
+        ),
+        teamId: Coalesce(
+            Param("teamId"),
+            "19:[team-id]@thread.skype"
+        ),
+        channelId: Coalesce(
+            Param("channelId"),
+            "19:[channel-id]@thread.skype"
+        ),
+        teamName: Coalesce(
+            Param("teamName"),
+            "Team unknown"
+        ),
+        channelName: Coalesce(
+            Param("channelName"),
+            "Channel unknown"
+        ),
+        chatId: Coalesce(
+            Param("chatId"),
+            "19:[chat-id]@thread.skype"
+        ),
+        theme: Coalesce(
+            If(
+                Param("theme") = "{theme}",
+                "default",
+                Param("theme")
+            ),
+            "default"
+        ),
+        channelType: Coalesce(
+            Param("channelType"),
+            ""
+        ),
+        teamSiteUrl: Coalesce(
+            Param("teamSiteUrl"),
+            ""
+        ),
+        locale: Coalesce(
+            Param("locale"),
+            ""
+        ),
+        entityId: Coalesce(
+            Param("entityId"),
+            ""
+        ),
+        subEntityId: Coalesce(
+            Param("subEntityId"),
+            ""
+        ),
+        tid: Coalesce(
+            Param("tid"),
+            ""
+        ),
+        isFullScreen: Coalesce(
+            Param("isFullScreen"),
+            ""
+        ),
+        userLicenseType: Coalesce(
+            Param("userLicenseType"),
+            ""
+        ),
+        tenantSKU: Coalesce(
+            Param("tenantSKU"),
+            ""
+        )
+    }
+);
+ClearCollect(
+    PowerAppContext,
+    {
+        tenantId: Coalesce(
+            Param("tenantId"),
+            ""
+        ),
+        action: Coalesce(
+            Param("action"),
+            ""
+        )
+    }
+);
+Set(
+    I365Context,
+    {
+        folder: Text(Param("i365folder"))
+    }
+)
+```
+
+#>

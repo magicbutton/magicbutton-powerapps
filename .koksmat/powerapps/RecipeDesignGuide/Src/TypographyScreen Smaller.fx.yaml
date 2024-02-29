@@ -1,0 +1,181 @@
+"'TypographyScreen Smaller' As screen":
+
+    Rectangle1_19 As rectangle:
+        Fill: =RGBA(230, 230, 230, 1)
+        Height: =111
+        Width: =Parent.Width
+        ZIndex: =1
+
+    Label1_37 As label:
+        Font: =Font.Lato
+        Height: =32
+        Text: ="Typeface family, sizes, weights, and colors."
+        Width: =1072
+        X: =124
+        Y: =55
+        ZIndex: =3
+
+    Label2_47 As label:
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Bold
+        Height: =42
+        Size: =18
+        Text: ="Typography - Smaller"
+        Width: =307
+        X: =124
+        Y: =23
+        ZIndex: =4
+
+    Icon1_16 As icon.BackArrow:
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(ScreenHome)
+        X: =35
+        Y: =23
+        ZIndex: =61
+
+    Container2_10 As groupContainer.manualLayoutContainer:
+        Height: =83
+        Width: =1366
+        Y: =347
+        ZIndex: =62
+
+        Label1_41 As label:
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =83
+            Size: =20
+            Text: ="Title - Heavy"
+            Width: =349
+            X: =12
+            ZIndex: =1
+
+        Label13_7 As label:
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =72
+            Size: =20
+            Text: ="The spectacle before us was indeed sublime."
+            Width: =987
+            X: =377
+            Y: =5
+            ZIndex: =2
+
+    Label15_1 As label:
+        Font: =Font.Lato
+        FontWeight: =FontWeight.Semibold
+        Height: =175
+        Size: =140
+        Text: ="Aa"
+        Width: =271
+        X: =99
+        Y: =135
+        ZIndex: =63
+
+    Label16_1 As label:
+        Font: =Font.Lato
+        Height: =150
+        Text: |-
+            ="ABCČĆDĐEFGHIJKLMNOPQRSŠTUVWXYZŽabcčćdđefghijklmnopqrsštuvwxyzžАБВГҐДЂЕЁЄЖЗЅИІЇЙЈКЛЉМНЊОПРСТЋУЎФХЦЧЏШЩЪЫЬЭЮЯабвгґдђеёєжзѕиіїйјклљмнњопрстћуўфхцчџшщъыьэюяΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωάΆέΈέΉίϊΐΊόΌύΰϋΎΫΏĂÂÊÔƠƯăâêôơư1234567890‘?’“!”(%)[#]{@}/&\<-+÷×=>®©$€£¥¢:;,.*"
+        Width: =525
+        X: =472
+        Y: =197
+        ZIndex: =64
+
+    Label17_1 As label:
+        Font: =Font.Lato
+        Height: =72
+        Size: =48
+        Text: ="Lato"
+        X: =472
+        Y: =125
+        ZIndex: =65
+
+    Container2_9 As groupContainer.manualLayoutContainer:
+        Height: =83
+        Width: =1366
+        Y: =412
+        ZIndex: =66
+
+        Label1_40 As label:
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Lighter
+            Height: =83
+            Size: =20
+            Text: ="Title - Light"
+            Width: =349
+            X: =12
+            ZIndex: =1
+
+        Label13_6 As label:
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Lighter
+            Height: =72
+            Size: =20
+            Text: ="The spectacle before us was indeed sublime."
+            Width: =987
+            X: =376
+            Y: =11
+            ZIndex: =2
+
+    Container2_8 As groupContainer.manualLayoutContainer:
+        Height: =83
+        Width: =1366
+        Y: =478
+        ZIndex: =67
+
+        Label1_39 As label:
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =83
+            Size: =16
+            Text: ="Subheader - Heavy"
+            Width: =349
+            X: =12
+            ZIndex: =1
+
+        Label13_5 As label:
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Bold
+            Height: =72
+            Size: =16
+            Text: ="The spectacle before us was indeed sublime."
+            Width: =987
+            X: =376
+            Y: =11
+            ZIndex: =2
+
+    Container2_7 As groupContainer.manualLayoutContainer:
+        Height: =83
+        Width: =1366
+        Y: =536
+        ZIndex: =68
+
+        Label1_38 As label:
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Lighter
+            Height: =83
+            Size: =16
+            Text: ="Subheader - Light"
+            Width: =349
+            X: =12
+            ZIndex: =1
+
+        Label13_4 As label:
+            Font: =Font.Lato
+            FontWeight: =FontWeight.Lighter
+            Height: =72
+            Size: =16
+            Text: ="The spectacle before us was indeed sublime."
+            Width: =987
+            X: =376
+            Y: =11
+            ZIndex: =2
+
+    Button3_2 As button:
+        Font: =Font.Lato
+        OnSelect: =Navigate('TypographyScreen Large')
+        Text: ="Larger"
+        X: =506
+        Y: =35
+        ZIndex: =70
+

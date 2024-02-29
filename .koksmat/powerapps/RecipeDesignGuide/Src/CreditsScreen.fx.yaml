@@ -1,0 +1,36 @@
+CreditsScreen As screen:
+
+    Rectangle1_17 As rectangle:
+        Fill: =RGBA(230, 230, 230, 1)
+        Height: =111
+        Width: =Parent.Width
+        ZIndex: =1
+
+    Label1_24 As label:
+        Font: =Font.Lato
+        Height: =32
+        Text: ="Inspirational source etc.."
+        Width: =1072
+        X: =124
+        Y: =55
+        ZIndex: =2
+
+    Label2_38 As label:
+        Font: =JUMPTO.font
+        FontWeight: =FontWeight.Bold
+        Size: =18
+        Text: |-
+            ="Credits
+            "
+        Width: =210
+        X: =124
+        Y: =23
+        ZIndex: =3
+
+    Icon1_14 As icon.BackArrow:
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(ScreenHome)
+        X: =35
+        Y: =23
+        ZIndex: =4
+
